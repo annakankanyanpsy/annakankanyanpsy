@@ -21,7 +21,6 @@
   scroll-behavior:smooth;
 }
 
-/* Prevents fixed navbar from covering section titles when clicking links */
 section {
   scroll-margin-top: 100px;
 }
@@ -423,11 +422,12 @@ h1{
       <div class="timeline-year">01</div>
       <div class="timeline-content">
         <div class="timeline-image-wrapper">
-          <!-- REPLACE edu1.jpg WITH YOUR GITHUB IMAGE LINK -->
           <img src="edu1.jpg" alt="Russian-Armenian University" class="timeline-image">
         </div>
-        <h3 id="edu1Title">Bachelor's Degree — Russian-Armenian (Slavonic) University</h3>
-        <p id="edu1Text">My first professional step in psychology began at the Russian-Armenian (Slavonic) University, where I completed my Bachelor's degree after four years of study.</p>
+        <div class="timeline-text">
+          <h3 id="edu1Title">Bachelor's Degree — Russian-Armenian (Slavonic) University</h3>
+          <p id="edu1Text">My first professional step in psychology began at the Russian-Armenian (Slavonic) University, where I completed my Bachelor's degree after four years of study.</p>
+        </div>
       </div>
     </div>
 
@@ -436,11 +436,12 @@ h1{
       <div class="timeline-year">02</div>
       <div class="timeline-content">
         <div class="timeline-image-wrapper">
-          <!-- REPLACE edu2.jpg WITH YOUR GITHUB IMAGE LINK -->
           <img src="edu2.jpg" alt="Yerevan State University" class="timeline-image">
         </div>
-        <h3 id="edu2Title">Clinical Psychology — Yerevan State University</h3>
-        <p id="edu2Text">To gain deeper professional specialization, I continued my education at Yerevan State University in the field of Clinical Psychology.</p>
+        <div class="timeline-text">
+          <h3 id="edu2Title">Clinical Psychology — Yerevan State University</h3>
+          <p id="edu2Text">To gain deeper professional specialization, I continued my education at Yerevan State University in the field of Clinical Psychology.</p>
+        </div>
       </div>
     </div>
 
@@ -449,11 +450,12 @@ h1{
       <div class="timeline-year">03</div>
       <div class="timeline-content">
         <div class="timeline-image-wrapper">
-          <!-- REPLACE edu3.jpg WITH YOUR GITHUB IMAGE LINK -->
           <img src="edu3.jpg" alt="Saint Petersburg Institute" class="timeline-image">
         </div>
-        <h3 id="edu3Title">Psychoanalytic Education — Saint Petersburg</h3>
-        <p id="edu3Text">I continued my professional development at the East European Institute of Psychoanalysis, one of the leading psychoanalytic institutions in Saint Petersburg.</p>
+        <div class="timeline-text">
+          <h3 id="edu3Title">Psychoanalytic Education — Saint Petersburg</h3>
+          <p id="edu3Text">I continued my professional development at the East European Institute of Psychoanalysis, one of the leading psychoanalytic institutions in Saint Petersburg.</p>
+        </div>
       </div>
     </div>
 
@@ -462,11 +464,12 @@ h1{
       <div class="timeline-year">04</div>
       <div class="timeline-content">
         <div class="timeline-image-wrapper">
-          <!-- REPLACE edu4.jpg WITH YOUR GITHUB IMAGE LINK -->
           <img src="edu4.jpg" alt="Professional Experience" class="timeline-image">
         </div>
-        <h3 id="edu4Title">10 Years of Professional Experience</h3>
-        <p id="edu4Text">I have been working in the field of psychology for 10 years, continuously developing my knowledge and therapeutic skills.</p>
+        <div class="timeline-text">
+          <h3 id="edu4Title">10 Years of Professional Experience</h3>
+          <p id="edu4Text">I have been working in the field of psychology for 10 years, continuously developing my knowledge and therapeutic skills.</p>
+        </div>
       </div>
     </div>
 
@@ -478,17 +481,24 @@ h1{
 .education-header{text-align:center;max-width:800px;margin:auto;}
 .education-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;margin-bottom:30px;}
 .education-header p:last-child{font-size:18px;line-height:2;color:#6d6056;}
-.timeline{max-width:900px;margin:100px auto 0;position:relative;}
+.timeline{max-width:1100px;margin:100px auto 0;position:relative;}
 .timeline::before{content:"";position:absolute;left:50%;top:0;height:100%;width:1px;background:#d8c5af;}
 .timeline-item{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-bottom:90px;position:relative;}
 .timeline-year{font-family:'Cormorant Garamond',serif;font-size:80px;color:#c4a586;text-align:right;}
-.timeline-content{background:white;padding:40px;border-radius:30px;box-shadow:0 20px 50px rgba(0,0,0,.05);}
+.timeline-content{
+  background:white;
+  padding:40px;
+  border-radius:30px;
+  box-shadow:0 20px 50px rgba(0,0,0,.05);
+  display:grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap:30px;
+  align-items:center;
+}
 
-/* NEW IMAGE STYLES */
 .timeline-image-wrapper{
   width:100%;
-  height:250px;
-  margin-bottom:25px;
+  height:280px;
   overflow:hidden;
   border-radius:15px;
 }
@@ -504,14 +514,27 @@ h1{
   transform:scale(1.05);
 }
 
-.timeline-content h3{font-family:'Cormorant Garamond',serif;font-size:38px;margin-bottom:20px;}
-.timeline-content p{font-size:16px;line-height:1.9;color:#6d6056;}
+.timeline-text h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  margin-bottom:15px;
+  line-height:1.3;
+}
+
+.timeline-text p{
+  font-size:16px;
+  line-height:1.9;
+  color:#6d6056;
+}
+
 @media(max-width:900px){
   .education-header h2{font-size:55px;}
   .timeline::before{left:20px;}
   .timeline-item{grid-template-columns:1fr;gap:20px;padding-left:50px;}
   .timeline-year{text-align:left;font-size:60px;}
-  .timeline-image-wrapper{height:200px;}
+  .timeline-content{grid-template-columns:1fr;}
+  .timeline-image-wrapper{height:220px;}
+  .timeline-text h3{font-size:26px;}
 }
 </style>
 
@@ -728,7 +751,6 @@ h1{
 
 <!-- ================= FINAL POLISH & MOBILE MENU ================= -->
 <style>
-/* SCROLL REVEAL ANIMATION */
 .about-section,.services-section,.education-section,.approach-section,.faq-section,.testimonials-section,.contact-section{
   opacity:0;
   transform:translateY(60px);
@@ -736,7 +758,6 @@ h1{
 }
 .show-section{opacity:1;transform:translateY(0);}
 
-/* MOBILE MENU */
 .mobile-menu-btn{display:none;font-size:30px;cursor:pointer;color:#43362d;}
 @media(max-width:900px){
   .mobile-menu-btn{display:block;}
@@ -758,7 +779,6 @@ h1{
 <!-- ================= ALL JAVASCRIPT ================= -->
 <script>
 
-// Navbar scroll effect
 window.addEventListener("scroll",()=>{
   if(window.scrollY>40){
     document.getElementById("navbar").classList.add("scrolled");
@@ -767,7 +787,6 @@ window.addEventListener("scroll",()=>{
   }
 });
 
-// Language Data Object
 const language={
   en:{
     small:"Clinical Psychology",
@@ -790,13 +809,13 @@ const language={
     fInsta:"Instagram", fContact:"Контакты", fPrivacy:"Политика конфиденциальности"
   },
   am:{
-    small:"լինիկական հոգեբանություն",
+    small:"Կլինիկական հոգեբանություն",
     title:"Ճանապարհ դեպի<br>ինքդ քեզ",
-    text:"Թերապիան անվտանգ տարածք է՝ ինքներդ եզ հասկանալու, ներքին հավասարակշռություն գտնելու և ավելի խաղաղ կյանք կառուցելու համար։",
+    text:"Թերապիան անվտանգ տարածք է՝ նքներդ ձեզ հասկանալու, ներքին հավասարակշռություն գտնելու և ավելի խաղաղ կյանք կառուցելու համար։",
     quote:"Իրական փոփոխությունը սկսվում է այն պահին, երբ քեզ իսկապես լսում են։",
-    book:"Գրանցվել",
-    about:"Իմ մասին",
-    mHome:"Գլխավոր", mAbout:"Իմ մասին", mServices:"Ծառայություններ", mEducation:"Կրթություն", mFaq:"Հարցեր", mContact:"Կապ",
+    book:"րանցվել",
+    about:"մ մասին",
+    mHome:"Գլխավոր", mAbout:"Իմ մասին", mServices:"առայություններ", mEducation:"Կրթություն", mFaq:"Հարցեր", mContact:"Կապ",
     fInsta:"Instagram", fContact:"ապ", fPrivacy:"Գաղտնիության քաղաքականություն"
   }
 };
@@ -804,40 +823,39 @@ const language={
 const aboutLanguages={
   en:{small:"ABOUT ME",title:"A Safe Space<br>For Personal Growth",description:"I am Anna Kankanyan, Clinical Psychologist. My work is based on an individual approach, scientific psychological methods and a deep understanding of human emotions.",i1:"Clinical Psychology",i2:"Individual Therapy",i3:"Personal Development"},
   ru:{small:"ОБО МНЕ",title:"Безопасное пространство<br>для развития",description:"Я Анна Канканян, клинический психолог. В своей работе я использую индивидуальный подход, современные психологические методы и глубокое понимание эмоций человека.",i1:"Клиническая психология",i2:"Индивидуальная терапия",i3:"Личностное развитие"},
-  am:{small:"ԻՄ ՄԱՍԻՆ",title:"Անվտանգ տարածք<br>անձնական աճի համար",description:"Ես Աննա Քանքանյանն եմ կլինիկական հոգեբան։ Իմ աշխատանքում համադրում եմ անհատական մոտեցումը, ժամանակակից հոգեբանական մեթոդները և մարդու զգացմունքների խոր ըմբռնումը։",i1:"Կլինիկական հոգեբանություն",i2:"Անհատական թերապիա",i3:"Անձնական զարգացում"}
+  am:{small:"ԻՄ ԱՍԻՆ",title:"Անվտանգ տարածք<br>անձնական աճի համար",description:"Ես Աննա Քանքանյանն եմ՝ կլինիկական հոգեբան։ Իմ աշխատանքում համադրում եմ անհատական մոտեցումը, ժամանակակից հոգեբանական մեթոդները և մարդու զգացմունքների խոր ըմբռնումը։",i1:"Կլինիկական հոգեբանություն",i2:"Անհատական թերապիա",i3:"Անձնական զարգացում"}
 };
 
 const servicesLanguages={
   en:{small:"SERVICES",title:"Areas Where I Can Help",intro:"Professional psychological support focused on understanding yourself, building emotional balance and improving quality of life.",s1:"Individual Therapy",t1:"A confidential space where we work with emotions, thoughts, anxiety, stress and personal difficulties.",s2:"Psychosomatics",t2:"Exploring the connection between emotional experiences, stress and physical sensations.",s3:"Self Development",t3:"Working on self-esteem, personal boundaries, relationships and inner resources.",s4:"Emotional Support",t4:"Support during difficult life periods, transitions and emotional challenges."},
   ru:{small:"УСЛУГИ",title:"С чем я могу помочь",intro:"Профессиональная психологическая поддержка для понимания себя, восстановления эмоционального баланса и улучшения качества жизни.",s1:"Индивидуальная терапия",t1:"Безопасное пространство для работы с эмоциями, тревогой, стрессом и личными трудностями.",s2:"Психосоматика",t2:"Исследование связи между эмоциональным состоянием, стрессом и реакциями организма.",s3:"Личностное развитие",t3:"Работа с самооценкой, границами, отношениями и внутренними ресурсами.",s4:"Эмоциональная поддержка",t4:"Поддержка в сложные периоды жизни и во время важных изменений."},
-  am:{small:"ԾԱՌԱՅՈՒԹՅՈՆՆԵՐ",title:"Ոլորտներ, որտեղ ես կարող եմ քեզ օգնել",intro:"Մասնագիտական հոգեբանական աջակցություն՝ ինքներդ ձեզ ավելի ավ հասկանալու, հավասարակշռություն գտնելու և կյանքի որակը բարելավելու համար։",s1:"Անհատական թերապիա",t1:"Անվտանգ տարածք՝ զգացմունքների, անհանգստության, սթրեսի և դժվարությունների հետ աշխատանքի համար։",s2:"Հոգեսոմատիկա",t2:"Զգացմունքների, սթրեսի և մարմնի արձագանքների միջև կապի ուսումնասիրություն։",s3:"Աննական զարգացում",t3:"Աշխատանք ինքնագնահատականի, սահմանների, հարաբերությունների և ներքին ռեսուրսների վրա։",s4:"Էմոցիոնալ աջակցություն",t4:"Աջակցություն կյանքի դժվար փուլերում և փոփոխությունների ամանակ։"}
+  am:{small:"ԱՌԱՅՈՒԹՅՈՆՆԵՐ",title:"Ոլորտներ, որտեղ ես կարող եմ քեզ օգնել",intro:"ասնագիտական հոգեբանական աջակցություն՝ նքներդ ձեզ ավելի լավ հասկանալու, հավասարակշռություն գտնելու և կյանքի որակը բարելավելու համար։",s1:"Անհատական թերապիա",t1:"Անվտանգ տարածք՝ գացմունքների, անհանգստության, սթրեսի և դժվարությունների հետ աշխատանքի համար։",s2:"Հոգեսոմատիկա",t2:"Զգացմունքների, սթրեսի և մարմնի արձագանքների միջև կապի ուսումնասիրություն։",s3:"Աննական զարգացում",t3:"Աշխատանք ինքնագնահատականի, սահմանների, հարաբերությունների և ներքին ռեսուրսների վրա։",s4:"Էմոցիոնալ աջակցություն",t4:"Աջակցություն կյանքի դժվար փուլերում և փոփոխությունների ժամանակ։"}
 };
 
 const educationLanguages={
   en:{small:"EDUCATION",title:"My Professional Journey",intro:"My academic path combines clinical psychology, psychoanalytic education and continuous professional development.",t1:"Bachelor's Degree — Russian-Armenian (Slavonic) University",d1:"My first professional step in psychology began at the Russian-Armenian (Slavonic) University, where I completed my Bachelor's degree after four years of study.",t2:"Clinical Psychology — Yerevan State University",d2:"To gain deeper professional specialization, I continued my education at Yerevan State University in the field of Clinical Psychology.",t3:"Psychoanalytic Education — Saint Petersburg",d3:"I continued my professional development at the East European Institute of Psychoanalysis, one of the leading psychoanalytic institutions in Saint Petersburg.",t4:"10 Years of Professional Experience",d4:"I have been working in the field of psychology for 10 years, continuously developing my knowledge and therapeutic skills."},
   ru:{small:"ОБРАЗОВАНИЕ",title:"Мой профессиональный путь",intro:"Мой академический путь включает клиническую психологию, психоаналитическое образование и непрерывное профессиональное развитие.",t1:"Бакалавриат — Российско-Армянский (Славянский) университет",d1:"Мой первый профессиональный шаг в психологии начался в Российско-Армянском (Славянском) университете, где я получила степень бакалавра после четырех лет обучения.",t2:"Клиническая психология — Ереванский государственный университет",d2:"Для получения более глубокой специализации я продолжила обучение в Ереванском государственном университете по направлению клинической психологии.",t3:"Психоаналитическое образование — Санкт-Петербург",d3:"Я продолжила профессиональное развитие в Восточно-Европейском Институте Психоанализа — одном из ведущих психоаналитических институтов Санкт-Петербурга.",t4:"10 лет профессионального опыта",d4:"Я работаю в области психологии уже 10 лет, постоянно развивая свои знания и терапевтические навыки."},
-  am:{small:"ԿՐԹՈՒԹՅՈՒՆ",title:"Իմ մասնագիտական ուղին",intro:"Իմ ակադեմիական ուղին համադրում է կլինիկական հոգեբանությունը, հոգեվերլուծական կրթությունը և շարունակական մասնագիտական զարգացումը։",t1:"Բակալավրիատ — Ռուս-հայկական (սլավոնական) համալսարան",d1:"Իմ առաջին մասնագիտական քայլը հոգեբանության ոլորտում սկսվեց ուս-հայկական (սլավոնական) համալսարանում, որտեղ ես ստացա բակալավրի աստիճան՝ չորս տարվա ուսուցումից հետո։",t2:"Կլինիկական հոգեբանություն — Երևանի պետական համալսարան",d2:"Ավելի խորը մասնագիտացում ստանալու համար ես շարունակեցի կրթությունս Երևանի պետական համալսարանում՝ կլինիկական հոգեբանության ոլորտում։",t3:"Հոգեվերլուծական կրթություն — Սանկտ Պետերբուրգ",d3:"Ես շարունակեցի մասնագիտական զարգացումս Արևելաեվրոպական հոգեվերլուծության ինստիտուտում, որը Սանկտ Պետերբուրգի առաջատար հոգեվերլուծական հաստատություններից մեկն է։",t4:"10 տարվա մասնագիտական փորձ",d4:"Ես արդեն 10 տարի է, ինչ աշխատում եմ հոգեբանության ոլորտում՝ անընդհատ զարգացնելով իմ գիտելիքներն ու թերապևտիկ հմտությունները։"}
+  am:{small:"ԿԹՈՒԹՅՈՒՆ",title:"մ մասնագիտական ուղին",intro:"Իմ ակադեմիական ուղին համադրում է կլինիկական հոգեբանությունը, հոգեվերլուծական կրթությունը և շարունակական մասնագիտական զարգացումը։",t1:"Բակալավրիատ — Ռուս-հայկական (սլավոնական) համալսարան",d1:"Իմ առաջին մասնագիտական քայլը հոգեբանության ոլորտում սկսվեց Ռուս-հայկական (սլավոնական) համալսարանում, որտեղ ես ստացա բակալավրի աստիճան՝ չորս տարվա ուսուցումից հետո։",t2:"Կլինիկական հոգեբանություն — Երևանի պետական համալսարան",d2:"Ավելի որը մասնագիտացում ստանալու համար ես շարունակեցի կրթությունս Երևանի պետական համալսարանում կլինիկական հոգեբանության ոլորտում։",t3:"Հոգեվերլուծական կրթություն — Սանկտ Պետերբուրգ",d3:"Ես շարունակեցի մասնագիտական զարգացումս Արևելաեվրոպական հոգեվերլուծության ինստիտուտում, որը Սանկտ Պետերբուրգի առաջատար հոգեվերլուծական հաստատություններից մեկն է։",t4:"10 տարվա մասնագիտական փորձ",d4:"Ես արդեն 10 տարի է, ինչ աշխատում եմ հոգեբանության ոլորտում՝ անընդհատ զարգացնելով իմ գիտելիքներն ու թերապևտիկ հմտությունները։"}
 };
 
 const approachLanguages={
   en:{small:"MY APPROACH",title:"How Therapy Works",intro:"A thoughtful and individual approach that helps you better understand yourself and create meaningful changes.",t1:"Understanding",d1:"We begin by exploring your experiences, emotions, thoughts and the situations that bring you to therapy.",t2:"Assessment",d2:"Together we identify patterns, difficulties and internal resources that can support your growth.",t3:"Therapeutic Process",d3:"Through professional psychological methods, we work toward emotional balance and positive change.",t4:"Growth",d4:"The goal is not only to overcome difficulties, but also to develop a deeper connection with yourself."},
   ru:{small:"МОЙ ПОДХОД",title:"Как проходит терапия",intro:"Индивидуальный подход, который помогает лучше понять себя и создать устойчивые изменения.",t1:"Понимание",d1:"Мы исследуем ваш опыт, эмоции, мысли и ситуации, которые привели вас в терапию.",t2:"Оценка",d2:"Вместе мы выявляем внутренние ресурсы и повторяющиеся жизненные паттерны.",t3:"Терапевтический процесс",d3:"Используя профессиональные методы, мы работаем над эмоциональным балансом и изменениями.",t4:"Развитие",d4:"Цель терапии — не только преодолеть трудности, но и глубже понять себя."},
-  am:{small:"ԻՄ ՄՈԵՑՈՒՄԸ",title:"Ինչպես է անցնում թերապիան",intro:"Անհատական մոտեցում, որն օգնում է ավելի լավ հասկանալ ինքներդ եզ և ստեղծել կայուն փոփոխություններ։",t1:"Հասկանալ",d1:"Մենք ուսումնասիրում ենք ձեր փորձը, զգացմունքները, մտքերը և այն իրավիճակները, որոնք բերել են ձեզ երապիայի։",t2:"Գնահատում",d2:"Միասին բացահայտում ենք դժվարությունները, օրինաչափությունները և ներքին ռեսուրսները։",t3:"Թերապևտիկ գործընթաց",d3:"Մասնագիտական մեթոդների միջոցով աշխատում ենք հուզական հավասարակշռության և փոփոխությունների վրա։",t4:"Աճ",d4:"Նպատակը ոչ միայն դվարությունները հաղթահարելն է, այլ նաև ինքներդ ձեզ ավելի որ ճանաչելը։"}
+  am:{small:"ԻՄ ՄՈԵՑՈՒՄԸ",title:"Ինչպես է անցնում երապիան",intro:"Անհատական մոտեցում, որն օգնում է ավելի լավ հասկանալ ինքներդ ձեզ և ստեղծել կայուն փոփոխություններ։",t1:"Հասկանալ",d1:"Մենք ուսումնասիրում ենք ձեր փորձը, զգացմունքները, մտքերը և այն իրավիճակները, որոնք բերել են ձեզ թերապիայի։",t2:"Գնահատում",d2:"Միասին բացահայտում ենք դժվարությունները, օրինաչափությունները և ներքին ռեսուրսները։",t3:"Թերապևտիկ գործընթաց",d3:"Մասնագիտական մեթոդների միջոցով աշխատում ենք հուզական հավասարակշռության և փոփոխությունների վրա։",t4:"Աճ",d4:"Նպատակը ոչ միայն դժվարությունները հաղթահարելն է, այլ նաև ինքներդ ձեզ ավելի խոր ճանաչելը։"}
 };
 
 const faqLanguages={
   en:{title:"Frequently Asked Questions",q1:"How long is one therapy session?",a1:"A typical session lasts around 50 minutes. The exact format depends on your individual needs.",q2:"How often should I attend therapy?",a2:"The frequency is discussed individually and depends on your goals and current situation.",q3:"Is everything discussed confidential?",a3:"Yes. Confidentiality and a safe therapeutic environment are fundamental parts of psychological work.",q4:"Is online therapy available?",a4:"Online consultations are available depending on your location and personal preferences."},
   ru:{title:"Часто задаваемые вопросы",q1:"Сколько длится одна сессия?",a1:"Обычно сессия длится около 50 минут. Формат зависит от ваших индивидуальных потребностей.",q2:"Как часто нужно посещать терапию?",a2:"Частота встреч определяется индивидуально в зависимости от целей и ситуации.",q3:"Сохраняется ли конфиденциальность?",a3:"Да. Конфиденциальность является основой психологической работы.",q4:"Доступна ли онлайн-терапия?",a4:"Онлайн-консультации доступны в зависимости от ваших предпочтений."},
-  am:{title:"Հաճախ տրվող հարցեր",q1:"Որքա՞ն է տևում մեկ սեանսը։",a1:"Սովորաբար սեանսը տևում է մոտ 50 րոպե։",q2:"Որքա՞ն հաճախ պետք է այցելել թերապիայի։",a2:"Հաճախականությունը որոշվում է անհատապես։",q3:"Արդյո՞ք ամեն ինչ գաղտնի է մնում։",a3:"Այո, գաղտնիությունը հոգեբանական աշխատանքի կարևոր հիմքն է։",q4:"Հնարավո՞ր է նլայն թերապիա։",a4:"Այո, հասանելի են օնլայն խորհրդատվություններ։"}
+  am:{title:"Հաճախ տրվող հարցեր",q1:"Որքա՞ն է տևում մեկ սեանսը։",a1:"Սովորաբար սեանսը տևում է մոտ 50 րոպե։",q2:"Որքա՞ն հաճախ պետք է այցելել թերապիայի։",a2:"Հաճախականությունը որոշվում է անհատապես։",q3:"Արդյո՞ք ամեն ինչ գաղտնի է մնում։",a3:"Այո, գաղտնիությունը հոգեբանական աշխատանքի կարևոր հիմքն է։",q4:"Հնարավո՞ր է օնլայն թերապիա։",a4:"Այո, հասանելի են օնլայն խորհրդատվություններ։"}
 };
 
 const contactLanguages={
   en:{small:"CONTACT",title:"Let's Begin Your Journey",intro:"If you feel ready to take the first step, I would be happy to support you on your path.",button:"Book A Consultation",location:"Location",email:"Email",social:"Social Media"},
   ru:{small:"КОНТАКТЫ",title:"Начнем этот путь вместе",intro:"Если вы готовы сделать первый шаг, я буду рада поддержать вас на этом пути.",button:"Записаться на консультацию",location:"Местоположение",email:"Электронная почта",social:"Социальные сети"},
-  am:{small:"ԱՊ",title:"Սկսենք այս ճանապարհը միասին",intro:"Եթե պատրաստ եք անել առաջին քայլը, ես ուրախ կլինեմ աջակցել ձեզ այս ճանապարհին։",button:"Գրանցվել խորհրդատվության",location:"Վայր",email:"լ․ հասցե",social:"ոցիալական ցանցեր"}
+  am:{small:"ԿԱՊ",title:"կսենք այս ճանապարհը միասին",intro:"Եթե պատրաստ եք անել առաջին քայլը, ես ուրախ կլինեմ աջակցել ձեզ այս ճանապարհին։",button:"Գրանցվել խորհրդատվության",location:"այր",email:"Էլ․ հասցե",social:"Սոցիալական ցանցեր"}
 };
 
-// Helper functions for sections
 function changeAbout(lang){
   document.getElementById("aboutSmall").innerHTML=aboutLanguages[lang].small;
   document.getElementById("aboutTitle").innerHTML=aboutLanguages[lang].title;
@@ -911,9 +929,7 @@ function changeContact(lang){
   document.getElementById("socialTitle").innerHTML=contactLanguages[lang].social;
 }
 
-// MAIN LANGUAGE SWITCHER FUNCTION
 function changeLang(lang){
-  // Hero
   document.getElementById("smallTitle").innerHTML=language[lang].small;
   document.getElementById("heroTitle").innerHTML=language[lang].title;
   document.getElementById("heroText").innerHTML=language[lang].text;
@@ -921,7 +937,6 @@ function changeLang(lang){
   document.getElementById("btn1").innerHTML=language[lang].book;
   document.getElementById("btn2").innerHTML=language[lang].about;
   
-  // Mobile Menu
   document.getElementById("mobileHome").innerHTML=language[lang].mHome;
   document.getElementById("mobileAbout").innerHTML=language[lang].mAbout;
   document.getElementById("mobileServices").innerHTML=language[lang].mServices;
@@ -929,12 +944,10 @@ function changeLang(lang){
   document.getElementById("mobileFaq").innerHTML=language[lang].mFaq;
   document.getElementById("mobileContact").innerHTML=language[lang].mContact;
   
-  // Footer
   document.getElementById("footerInsta").innerHTML=language[lang].fInsta;
   document.getElementById("footerContact").innerHTML=language[lang].fContact;
   document.getElementById("footerPrivacy").innerHTML=language[lang].fPrivacy;
 
-  // Sections
   changeAbout(lang);
   changeServices(lang);
   changeEducation(lang);
@@ -943,18 +956,15 @@ function changeLang(lang){
   changeContact(lang);
 }
 
-// FAQ Toggle
 function openFaq(button){
   let item=button.parentElement;
   item.classList.toggle("active");
 }
 
-// Mobile Menu Toggle
 function openMobileMenu(){
   document.getElementById("mobileMenu").classList.toggle("active");
 }
 
-// Scroll Animation Observer
 const sections=document.querySelectorAll(".about-section, .services-section, .education-section, .approach-section, .faq-section, .testimonials-section, .contact-section");
 
 const observer=new IntersectionObserver(
