@@ -1,352 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Clinical Psychologist | Anna Kankanyan</title>
+<title>Anna Kankanyan | Clinical Psychologist</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap');
-
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Montserrat',sans-serif;
-    background:#faf6ef;
-    color:#4d4036;
-    line-height:1.7;
+
+background:#faf8f4;
+font-family:'Montserrat',sans-serif;
+color:#43362d;
+overflow-x:hidden;
+
 }
 
+body::before{
 
-header{
-    min-height:100vh;
-    background:
-    linear-gradient(
-    rgba(250,246,239,.85),
-    rgba(250,246,239,.95)
-    ),
-    url("your-background-image.jpg");
-    background-size:cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:120px 40px 40px;
+content:"";
+position:fixed;
+top:-200px;
+right:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#efe4d8 0%,transparent 70%);
+z-index:-2;
+
 }
 
+body::after{
+
+content:"";
+position:fixed;
+left:-250px;
+bottom:-250px;
+width:700px;
+height:700px;
+background:radial-gradient(circle,#f4ece4 0%,transparent 70%);
+z-index:-2;
+
+}
 
 nav{
-    position:absolute;
-    top:0;
-    width:100%;
-    padding:25px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:10;
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:24px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:.4s;
+z-index:999;
+
 }
 
+nav.scrolled{
+
+background:rgba(255,255,255,.55);
+backdrop-filter:blur(18px);
+box-shadow:0 8px 35px rgba(0,0,0,.05);
+
+}
 
 .logo{
-    font-family:'Cormorant Garamond';
-    font-size:35px;
-    letter-spacing:2px;
+
+font-family:'Cormorant Garamond',serif;
+font-size:34px;
+letter-spacing:2px;
+font-weight:600;
+
 }
 
+.menu{
 
-nav a{
-    text-decoration:none;
-    color:#665447;
-    margin:0 15px;
-    font-size:14px;
+display:flex;
+gap:45px;
+
 }
 
+.menu a{
+
+text-decoration:none;
+color:#43362d;
+font-size:14px;
+letter-spacing:1px;
+transition:.3s;
+
+}
+
+.menu a:hover{
+
+opacity:.5;
+
+}
+
+.right{
+
+display:flex;
+align-items:center;
+gap:20px;
+
+}
+
+.lang{
+
+display:flex;
+gap:8px;
+
+}
 
 .lang button{
-    background:none;
-    border:1px solid #cdbca9;
-    padding:5px 10px;
-    cursor:pointer;
-    color:#665447;
+
+background:transparent;
+border:1px solid #d7c5b3;
+padding:7px 12px;
+border-radius:50px;
+cursor:pointer;
+transition:.35s;
+font-size:12px;
+
 }
 
+.lang button:hover{
+
+background:#b99876;
+color:white;
+
+}
 
 .hero{
-    display:flex;
-    align-items:center;
-    gap:70px;
-    max-width:1100px;
+
+min-height:100vh;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+padding:140px 9%;
+gap:70px;
+
 }
 
+.left{
 
-.hero-text{
-    flex:1;
+animation:fadeLeft 1.4s;
+
 }
 
+.small{
 
-.hero h1{
-    font-family:'Cormorant Garamond';
-    font-size:65px;
-    font-weight:600;
+font-size:13px;
+letter-spacing:5px;
+margin-bottom:25px;
+text-transform:uppercase;
+color:#92775e;
+
 }
 
+h1{
 
-.hero p{
-    font-size:18px;
-    margin:25px 0;
+font-family:'Cormorant Garamond',serif;
+font-size:92px;
+font-weight:600;
+line-height:1;
+
 }
 
+.intro{
 
-.btn{
-    display:inline-block;
-    padding:14px 35px;
-    background:#bda48b;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
+margin-top:35px;
+font-size:19px;
+line-height:1.9;
+max-width:520px;
+color:#6d6056;
+
 }
 
+.quote{
 
-.photo-box{
-    width:390px;
-    height:520px;
-    border-radius:40px;
-    overflow:hidden;
-    background:#eee1d3;
-    box-shadow:0 25px 60px rgba(80,60,40,.15);
+margin-top:40px;
+padding-left:22px;
+border-left:2px solid #ccb59b;
+font-style:italic;
+font-size:18px;
+color:#8b7460;
+
 }
 
+.buttons{
 
-.photo-box img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center center;
-    display:block;
+margin-top:55px;
+display:flex;
+gap:20px;
+
 }
 
-.photo-box img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.primary{
+
+background:#b99876;
+color:white;
+padding:18px 40px;
+text-decoration:none;
+border-radius:50px;
+transition:.35s;
+
 }
 
+.primary:hover{
 
+transform:translateY(-4px);
 
-section{
-    padding:100px 10%;
 }
 
+.secondary{
 
-.title{
-    text-align:center;
-    font-family:'Cormorant Garamond';
-    font-size:50px;
-    margin-bottom:50px;
+border:1px solid #c9b29c;
+padding:18px 40px;
+border-radius:50px;
+text-decoration:none;
+color:#43362d;
+transition:.35s;
+
 }
 
+.secondary:hover{
 
-.about{
-    display:flex;
-    gap:50px;
-    align-items:center;
+background:white;
+
 }
 
+.photo{
 
-.about div{
-    flex:1;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+animation:fadeRight 1.6s;
+
 }
 
+.photo::before{
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+content:"";
+position:absolute;
+width:520px;
+height:640px;
+background:#efe4d8;
+border-radius:70px;
+transform:rotate(-6deg);
+
 }
 
+.photo img{
 
-.card{
-    background:white;
-    padding:35px;
-    border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-    transition:.3s;
+width:500px;
+height:680px;
+object-fit:cover;
+border-radius:40px;
+position:relative;
+box-shadow:0 40px 90px rgba(0,0,0,.13);
+
 }
 
+.scroll{
 
-.card:hover{
-    transform:translateY(-10px);
+position:absolute;
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
+font-size:13px;
+letter-spacing:3px;
+color:#92775e;
+animation:updown 2s infinite;
+
 }
 
+@keyframes fadeLeft{
 
-.card h3{
-    font-family:'Cormorant Garamond';
-    font-size:30px;
+from{
+
+opacity:0;
+transform:translateX(-60px);
+
 }
 
+to{
 
-.faq-item{
-    background:white;
-    padding:25px;
-    margin:15px 0;
-    border-radius:20px;
-}
+opacity:1;
+transform:translateX(0);
 
-
-.contact{
-    background:#eee2d5;
-    border-radius:40px;
-    text-align:center;
-}
-
-
-footer{
-    padding:30px;
-    text-align:center;
-    background:#4d4036;
-    color:white;
-}
-
-
-.hidden{
-    display:none;
-}
-
-
-
-@media(max-width:800px){
-
-nav{
-    display:none;
-}
-
-.hero,
-.about{
-    flex-direction:column;
-    text-align:center;
-}
-
-
-.hero h1{
-    font-size:45px;
-}
-
-
-.photo-box{
-    width:280px;
-    height:350px;
-}
-
-section{
-    padding:70px 6%;
 }
 
 }
 
+@keyframes fadeRight{
+
+from{
+
+opacity:0;
+transform:translateX(60px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes updown{
+
+0%{transform:translate(-50%,0);}
+50%{transform:translate(-50%,10px);}
+100%{transform:translate(-50%,0);}
+
+}
+
+@media(max-width:1100px){
+
+.hero{
+
+grid-template-columns:1fr;
+text-align:center;
+
+}
+
+.left{
+
+order:2;
+
+}
+
+.photo{
+
+order:1;
+
+}
+
+.photo::before{
+
+width:340px;
+height:450px;
+
+}
+
+.photo img{
+
+width:320px;
+height:430px;
+
+}
+
+.intro{
+
+margin:auto;
+margin-top:30px;
+
+}
+
+.quote{
+
+margin:35px auto;
+max-width:400px;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+.menu{
+
+display:none;
+
+}
+
+h1{
+
+font-size:58px;
+
+}
+
+.logo{
+
+font-size:28px;
+
+}
+
+}
 
 </style>
 
 </head>
 
-
 <body>
 
-
-<header>
-
-
-<nav>
+<nav id="navbar">
 
 <div class="logo">
 Anna Kankanyan
 </div>
 
+<div class="menu">
 
-<div>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Education</a>
+<a href="#">FAQ</a>
+<a href="#">Contact</a>
+
 </div>
 
+<div class="right">
 
 <div class="lang">
+
 <button onclick="changeLang('en')">EN</button>
 <button onclick="changeLang('ru')">RU</button>
 <button onclick="changeLang('am')">AM</button>
+
+</div>
+
 </div>
 
 </nav>
 
+<section class="hero">
 
+<div class="left">
 
-<div class="hero" id="home">
+<div class="small" id="smallTitle">
 
+Clinical Psychology
 
-<div class="hero-text">
+</div>
 
-<h1 id="title">
-Clinical Psychologist
+<h1 id="heroTitle">
+
+Helping You<br>
+Find Yourself
+
 </h1>
 
+<p class="intro" id="heroText">
 
-<p id="intro">
-A safe space where you can understand yourself,
-heal emotional wounds and create a balanced life.
+Therapy is a gentle journey toward understanding yourself, healing emotional wounds, and creating a life with greater clarity, balance, and inner peace.
+
+</p>
+
+<div class="quote" id="quote">
+
+"Every meaningful change begins with feeling truly heard."
+
+</div>
+
+<div class="buttons">
+
+<a href="#" class="primary" id="btn1">
+
+Book Consultation
+
+</a>
+
+<a href="#" class="secondary" id="btn2">
+
+About Me
+
+</a>
+
+</div>
+
+</div>
+
+<div class="photo">
+
+<img src="luck.jpg">
+
+</div>
+
+<div class="scroll">
+
+SCROLL
+
+</div>
+
+</section>
+
+<script>
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>40){
+
+navbar.classList.add("scrolled");
+
+}else{
+
+navbar.classList.remove("scrolled");
+
+}
+
+});
+
+const language={
+
+en:{
+
+small:"Clinical Psychology",
+
+title:"Helping You<br>Find Yourself",
+
+text:"Therapy is a gentle journey toward understanding yourself, healing emotional wounds, and creating a life with greater clarity, balance, and inner peace.",
+
+quote:"Every meaningful change begins with feeling truly heard.",
+
+book:"Book Consultation",
+
+about:"About Me"
+
+},
+
+ru:{
+
+small:"Клиническая психология",
+
+title:"Путь к себе",
+
+text:"Психотерапия — это пространство, где вы сможете понять себя, восстановить внутреннее равновесие и почувствовать уверенность в своей жизни.",
+
+quote:"Каждое настоящее изменение начинается с того, что вас по-настоящему услышали.",
+
+book:"Записаться",
+
+about:"Обо мне"
+
+},
+
+am:{
+
+small:"Կլինիկական հոգեբանություն",
+
+title:"Ճանապարհ դեպի<br>ինքներդ ձեզ",
+
+text:"Թերապիան անվտանգ տարածք է՝ ինքներդ ձեզ հասկանալու, ներքին հավասարակշռություն գտնելու և ավելի խաղաղ կյանք կառուցելու համար։",
+
+quote:"Իրական փոփոխությունը սկսվում է այն պահին, երբ քեզ իսկապես լսում են։",
+
+book:"Գրանցվել",
+
+about:"Իմ մասին"
+
+}
+
+}
+
+function changeLang(lang){
+
+document.getElementById("smallTitle").innerHTML=language[lang].small;
+document.getElementById("heroTitle").innerHTML=language[lang].title;
+document.getElementById("heroText").innerHTML=language[lang].text;
+document.getElementById("quote").innerHTML=language[lang].quote;
+document.getElementById("btn1").innerHTML=language[lang].book;
+document.getElementById("btn2").innerHTML=language[lang].about;
+
+}
+
+</script>
+<!-- ================= ABOUT SECTION ================= -->
+
+<section class="about-section" id="about">
+
+<div class="about-image">
+
+<div class="about-shape"></div>
+
+<img src="luck.jpg" alt="Anna Kankanyan">
+
+</div>
+
+
+<div class="about-content">
+
+<p class="section-small" id="aboutSmall">
+ABOUT ME
 </p>
 
 
-<a href="#contact" class="btn">
-Book a consultation
-</a>
-
-
-</div>
-
-
-
-<div class="photo-box">
-
- <img src="luck.jpg" alt="luck">
-</div>
-
-
-</div>
-
-
-</header>
-
-
-
-
-
-<section id="about">
-
-
-<h2 class="title">
-About Me
+<h2 id="aboutTitle">
+A Safe Space<br>
+For Personal Growth
 </h2>
 
 
-<div class="about">
+<p id="aboutDescription">
+
+I am Anna Kankanyan, Clinical Psychologist.
+My work is based on an individual approach,
+scientific psychological methods and a deep
+understanding of human emotions.
+
+</p>
+
+
+<div class="about-info">
 
 
 <div>
 
-<p id="aboutText">
+<span>
+01
+</span>
 
-I am Anna Kankanyan, Clinical Psychologist.
-My approach combines modern psychological methods,
-deep understanding of emotions and individual work
-with each client.
+<p id="info1">
+Clinical Psychology
+</p>
 
+</div>
+
+
+<div>
+
+<span>
+02
+</span>
+
+<p id="info2">
+Individual Therapy
+</p>
+
+</div>
+
+
+<div>
+
+<span>
+03
+</span>
+
+<p id="info3">
+Personal Development
 </p>
 
 </div>
@@ -354,171 +667,596 @@ with each client.
 
 </div>
 
+
+<div class="signature">
+
+Anna Kankanyan
+
+</div>
+
+
+</div>
+
+
 </section>
 
 
+<style>
+
+
+.about-section{
+
+padding:140px 9%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:100px;
+align-items:center;
+
+}
+
+
+.about-image{
+
+position:relative;
+display:flex;
+justify-content:center;
+
+}
+
+
+.about-image img{
+
+width:430px;
+height:560px;
+object-fit:cover;
+border-radius:35px;
+position:relative;
+z-index:2;
+box-shadow:0 35px 80px rgba(0,0,0,.12);
+
+}
+
+
+.about-shape{
+
+position:absolute;
+width:430px;
+height:560px;
+background:#eadfd2;
+border-radius:35px;
+transform:rotate(7deg);
+top:25px;
+
+}
+
+
+.section-small{
+
+font-size:13px;
+letter-spacing:5px;
+color:#92775e;
+margin-bottom:25px;
+
+}
+
+
+.about-content h2{
+
+font-family:'Cormorant Garamond',serif;
+font-size:70px;
+font-weight:600;
+line-height:1.1;
+margin-bottom:35px;
+
+}
+
+
+.about-content>p{
+
+font-size:18px;
+line-height:2;
+color:#6d6056;
+max-width:560px;
+
+}
+
+
+.about-info{
+
+margin-top:45px;
+display:flex;
+gap:35px;
+
+}
+
+
+.about-info div{
+
+border-left:1px solid #cdb79f;
+padding-left:20px;
+
+}
+
+
+.about-info span{
+
+font-size:13px;
+color:#a8896d;
+
+}
+
+
+.about-info p{
+
+font-size:14px;
+margin-top:10px;
+
+}
+
+
+.signature{
+
+margin-top:50px;
+font-family:'Cormorant Garamond',serif;
+font-size:40px;
+font-style:italic;
+color:#8d735d;
+
+}
 
 
 
-<section id="services">
+@media(max-width:900px){
 
-<h2 class="title">
-Services
+
+.about-section{
+
+grid-template-columns:1fr;
+text-align:center;
+
+}
+
+
+.about-image img,
+.about-shape{
+
+width:320px;
+height:430px;
+
+}
+
+
+.about-content h2{
+
+font-size:50px;
+
+}
+
+
+.about-info{
+
+justify-content:center;
+flex-direction:column;
+
+}
+
+
+}
+
+</style>
+
+
+<script>
+
+
+const aboutLanguages={
+
+
+en:{
+
+small:"ABOUT ME",
+
+title:"A Safe Space<br>For Personal Growth",
+
+description:"I am Anna Kankanyan, Clinical Psychologist. My work is based on an individual approach, scientific psychological methods and a deep understanding of human emotions.",
+
+i1:"Clinical Psychology",
+
+i2:"Individual Therapy",
+
+i3:"Personal Development"
+
+},
+
+
+ru:{
+
+small:"ОБО МНЕ",
+
+title:"Безопасное пространство<br>для развития",
+
+description:"Я Анна Канканян, клинический психолог. В своей работе я использую индивидуальный подход, современные психологические методы и глубокое понимание эмоций человека.",
+
+i1:"Клиническая психология",
+
+i2:"Индивидуальная терапия",
+
+i3:"Личностное развитие"
+
+},
+
+
+am:{
+
+small:"ԻՄ ՄԱՍԻՆ",
+
+title:"Անվտանգ տարածք<br>անձնական աճի համար",
+
+description:"Ես Աննա Կանկանյանն եմ՝ կլինիկական հոգեբան։ Իմ աշխատանքում համադրում եմ անհատական մոտեցումը, ժամանակակից հոգեբանական մեթոդները և մարդու զգացմունքների խոր ըմբռնումը։",
+
+i1:"Կլինիկական հոգեբանություն",
+
+i2:"Անհատական թերապիա",
+
+i3:"Անձնական զարգացում"
+
+}
+
+
+}
+
+
+function changeAbout(lang){
+
+document.getElementById("aboutSmall").innerHTML=aboutLanguages[lang].small;
+
+document.getElementById("aboutTitle").innerHTML=aboutLanguages[lang].title;
+
+document.getElementById("aboutDescription").innerHTML=aboutLanguages[lang].description;
+
+document.getElementById("info1").innerHTML=aboutLanguages[lang].i1;
+
+document.getElementById("info2").innerHTML=aboutLanguages[lang].i2;
+
+document.getElementById("info3").innerHTML=aboutLanguages[lang].i3;
+
+}
+
+
+</script>
+    <!-- ================= SERVICES SECTION ================= -->
+
+<section class="services-section" id="services">
+
+
+<div class="services-header">
+
+<p class="section-small" id="servicesSmall">
+SERVICES
+</p>
+
+
+<h2 id="servicesTitle">
+Areas Where I Can Help
 </h2>
 
 
-<div class="cards">
+<p id="servicesIntro">
+
+Professional psychological support focused on understanding yourself,
+building emotional balance and improving quality of life.
+
+</p>
 
 
-<div class="card">
+</div>
 
-<h3>
+
+
+<div class="services-grid">
+
+
+
+<div class="service-card">
+
+
+<div class="number">
+01
+</div>
+
+
+<h3 id="service1Title">
 Individual Therapy
 </h3>
 
-<p>
-Support for anxiety, stress, emotional difficulties
-and personal growth.
-</p>
 
-</div>
+<p id="service1Text">
 
+A confidential space where we work with emotions,
+thoughts, anxiety, stress and personal difficulties.
 
-<div class="card">
-
-<h3>
-Psychosomatics
-</h3>
-
-<p>
-Understanding the connection between emotions
-and body reactions.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-Self Development
-</h3>
-
-<p>
-Building confidence, boundaries and healthier relationships.
-</p>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section id="faq">
-
-<h2 class="title">
-FAQ
-</h2>
-
-
-<div class="faq-item">
-
-<b>
-How long is one session?
-</b>
-
-<p>
-Usually 50 minutes.
-</p>
-
-</div>
-
-
-<div class="faq-item">
-
-<b>
-Is online therapy available?
-</b>
-
-<p>
-Yes, online consultations are available.
-</p>
-
-</div>
-
-
-<div class="faq-item">
-
-<b>
-How many sessions are needed?
-</b>
-
-<p>
-It depends on your personal goals and situation.
-</p>
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<section id="contact">
-
-
-<div class="contact">
-
-
-<h2 class="title">
-Contact
-</h2>
-
-
-<p>
-Yerevan, Armenia
 </p>
 
 
-<p>
-Instagram: @yourinstagram
-</p>
-
-
-<p>
-Email: your@email.com
-</p>
-
-
-<br>
-
-<a class="btn">
-Schedule consultation
+<a href="#">
+Learn more →
 </a>
 
 
 </div>
 
 
+
+
+<div class="service-card">
+
+
+<div class="number">
+02
+</div>
+
+
+<h3 id="service2Title">
+Psychosomatics
+</h3>
+
+
+<p id="service2Text">
+
+Exploring the connection between emotional experiences,
+stress and physical sensations.
+
+</p>
+
+
+<a href="#">
+Learn more →
+</a>
+
+
+</div>
+
+
+
+
+
+<div class="service-card">
+
+
+<div class="number">
+03
+</div>
+
+
+<h3 id="service3Title">
+Self Development
+</h3>
+
+
+<p id="service3Text">
+
+Working on self-esteem, personal boundaries,
+relationships and inner resources.
+
+</p>
+
+
+<a href="#">
+Learn more →
+</a>
+
+
+</div>
+
+
+
+<div class="service-card">
+
+
+<div class="number">
+04
+</div>
+
+
+<h3 id="service4Title">
+Emotional Support
+</h3>
+
+
+<p id="service4Text">
+
+Support during difficult life periods,
+transitions and emotional challenges.
+
+</p>
+
+
+<a href="#">
+Learn more →
+</a>
+
+
+</div>
+
+
+
+
+</div>
+
+
 </section>
 
 
 
 
-<footer>
+<style>
 
-© 2026 Anna Kankanyan | Clinical Psychologist
 
-</footer>
+.services-section{
+
+padding:140px 9%;
+background:#f7f2eb;
+
+}
+
+
+
+.services-header{
+
+text-align:center;
+max-width:800px;
+margin:auto;
+
+}
+
+
+.services-header h2{
+
+font-family:'Cormorant Garamond',serif;
+font-size:75px;
+line-height:1.1;
+font-weight:600;
+margin-bottom:30px;
+
+}
+
+
+.services-header>p:last-child{
+
+font-size:18px;
+line-height:2;
+color:#6d6056;
+
+}
+
+
+
+.services-grid{
+
+margin-top:80px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:35px;
+
+}
+
+
+
+.service-card{
+
+background:white;
+padding:45px;
+border-radius:35px;
+position:relative;
+overflow:hidden;
+transition:.45s;
+min-height:330px;
+box-shadow:0 20px 50px rgba(0,0,0,.04);
+
+}
+
+
+
+.service-card::before{
+
+content:"";
+position:absolute;
+width:150px;
+height:150px;
+right:-50px;
+top:-50px;
+background:#eee1d3;
+border-radius:50%;
+transition:.5s;
+
+}
+
+
+
+.service-card:hover{
+
+transform:translateY(-12px);
+box-shadow:0 30px 70px rgba(0,0,0,.1);
+
+}
+
+
+
+.service-card:hover::before{
+
+transform:scale(1.5);
+
+}
+
+
+
+.number{
+
+font-family:'Cormorant Garamond',serif;
+font-size:45px;
+color:#b99876;
+position:relative;
+
+}
+
+
+
+.service-card h3{
+
+font-family:'Cormorant Garamond',serif;
+font-size:40px;
+margin:25px 0;
+position:relative;
+
+}
+
+
+
+.service-card p{
+
+font-size:16px;
+line-height:1.9;
+color:#6d6056;
+position:relative;
+
+}
+
+
+
+.service-card a{
+
+display:inline-block;
+margin-top:25px;
+text-decoration:none;
+color:#8d735d;
+font-size:14px;
+letter-spacing:1px;
+position:relative;
+
+}
+
+
+
+@media(max-width:900px){
+
+
+.services-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.services-header h2{
+
+font-size:55px;
+
+}
+
+
+}
+
+</style>
 
 
 
@@ -527,42 +1265,2371 @@ Schedule consultation
 <script>
 
 
-const texts={
+const servicesLanguages={
+
 
 en:{
-title:"Clinical Psychologist",
-intro:"A safe space where you can understand yourself, heal emotional wounds and create a balanced life.",
-about:"I am Anna Kankanyan, Clinical Psychologist. My approach combines modern psychological methods, deep understanding of emotions and individual work with each client."
+
+small:"SERVICES",
+
+title:"Areas Where I Can Help",
+
+intro:"Professional psychological support focused on understanding yourself, building emotional balance and improving quality of life.",
+
+
+s1:"Individual Therapy",
+t1:"A confidential space where we work with emotions, thoughts, anxiety, stress and personal difficulties.",
+
+
+s2:"Psychosomatics",
+t2:"Exploring the connection between emotional experiences, stress and physical sensations.",
+
+
+s3:"Self Development",
+t3:"Working on self-esteem, personal boundaries, relationships and inner resources.",
+
+
+s4:"Emotional Support",
+t4:"Support during difficult life periods, transitions and emotional challenges."
+
 },
+
+
 
 ru:{
-title:"Клинический психолог",
-intro:"Безопасное пространство, где вы можете лучше понять себя, восстановить внутренний баланс и улучшить качество жизни.",
-about:"Я Анна Канканян, клинический психолог. Работаю индивидуально, сочетая современные психологические методы и глубокое понимание личности."
+
+small:"УСЛУГИ",
+
+title:"С чем я могу помочь",
+
+intro:"Профессиональная психологическая поддержка для понимания себя, восстановления эмоционального баланса и улучшения качества жизни.",
+
+
+s1:"Индивидуальная терапия",
+t1:"Безопасное пространство для работы с эмоциями, тревогой, стрессом и личными трудностями.",
+
+
+s2:"Психосоматика",
+t2:"Исследование связи между эмоциональным состоянием, стрессом и реакциями организма.",
+
+
+s3:"Личностное развитие",
+t3:"Работа с самооценкой, границами, отношениями и внутренними ресурсами.",
+
+
+s4:"Эмоциональная поддержка",
+t4:"Поддержка в сложные периоды жизни и во время важных изменений."
+
 },
 
+
+
+
 am:{
-title:"Կլինիկական հոգեբան",
-intro:"Անվտանգ տարածք, որտեղ կարող եք հասկանալ ինքներդ ձեզ, հաղթահարել դժվարությունները և ստեղծել ավելի հավասարակշռված կյանք։",
-about:"Ես Աննա Կանկանյանն եմ՝ կլինիկական հոգեբան։ Աշխատում եմ անհատական մոտեցմամբ՝ համադրելով ժամանակակից հոգեբանական մեթոդները։"
+
+small:"ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ",
+
+title:"Ոլորտներ, որտեղ կարող եմ օգնել",
+
+intro:"Մասնագիտական հոգեբանական աջակցություն՝ ինքներդ ձեզ ավելի լավ հասկանալու, հավասարակշռություն գտնելու և կյանքի որակը բարելավելու համար։",
+
+
+s1:"Անհատական թերապիա",
+t1:"Անվտանգ տարածք՝ զգացմունքների, անհանգստության, սթրեսի և դժվարությունների հետ աշխատանքի համար։",
+
+
+s2:"Հոգեսոմատիկա",
+t2:"Զգացմունքների, սթրեսի և մարմնի արձագանքների միջև կապի ուսումնասիրություն։",
+
+
+s3:"Անձնական զարգացում",
+t3:"Աշխատանք ինքնագնահատականի, սահմանների, հարաբերությունների և ներքին ռեսուրսների վրա։",
+
+
+s4:"Էմոցիոնալ աջակցություն",
+t4:"Աջակցություն կյանքի դժվար փուլերում և փոփոխությունների ժամանակ։"
+
 }
 
-};
+
+}
 
 
-function changeLang(lang){
 
-document.getElementById("title").innerHTML=texts[lang].title;
+function changeServices(lang){
 
-document.getElementById("intro").innerHTML=texts[lang].intro;
 
-document.getElementById("aboutText").innerHTML=texts[lang].about;
+document.getElementById("servicesSmall").innerHTML=servicesLanguages[lang].small;
+
+document.getElementById("servicesTitle").innerHTML=servicesLanguages[lang].title;
+
+document.getElementById("servicesIntro").innerHTML=servicesLanguages[lang].intro;
+
+
+document.getElementById("service1Title").innerHTML=servicesLanguages[lang].s1;
+document.getElementById("service1Text").innerHTML=servicesLanguages[lang].t1;
+
+
+document.getElementById("service2Title").innerHTML=servicesLanguages[lang].s2;
+document.getElementById("service2Text").innerHTML=servicesLanguages[lang].t2;
+
+
+document.getElementById("service3Title").innerHTML=servicesLanguages[lang].s3;
+document.getElementById("service3Text").innerHTML=servicesLanguages[lang].t3;
+
+
+document.getElementById("service4Title").innerHTML=servicesLanguages[lang].s4;
+document.getElementById("service4Text").innerHTML=servicesLanguages[lang].t4;
+
 
 }
 
 
 </script>
+   <!-- ================= EDUCATION SECTION ================= -->
+
+<section class="education-section" id="education">
 
 
+<div class="education-header">
+
+<p class="section-small" id="educationSmall">
+EDUCATION
+</p>
+
+
+<h2 id="educationTitle">
+My Professional Journey
+</h2>
+
+
+<p id="educationIntro">
+
+Continuous learning and professional development
+are essential parts of my work as a clinical psychologist.
+
+</p>
+
+
+</div>
+
+
+
+<div class="timeline">
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-year">
+01
+</div>
+
+
+<div class="timeline-content">
+
+<h3 id="edu1Title">
+Clinical Psychology Education
+</h3>
+
+
+<p id="edu1Text">
+
+Academic background in psychology with a focus
+on understanding human behavior, emotions and mental health.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-year">
+02
+</div>
+
+
+<div class="timeline-content">
+
+<h3 id="edu2Title">
+Professional Training
+</h3>
+
+
+<p id="edu2Text">
+
+Continuous participation in educational programs,
+workshops and advanced psychological approaches.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-year">
+03
+</div>
+
+
+<div class="timeline-content">
+
+<h3 id="edu3Title">
+Clinical Practice
+</h3>
+
+
+<p id="edu3Text">
+
+Individual work with clients, providing psychological
+support in a safe and confidential environment.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-year">
+04
+</div>
+
+
+<div class="timeline-content">
+
+<h3 id="edu4Title">
+Continuous Development
+</h3>
+
+
+<p id="edu4Text">
+
+My professional path continues through research,
+learning and improving therapeutic skills.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<style>
+
+
+.education-section{
+
+padding:150px 9%;
+background:#faf8f4;
+
+}
+
+
+
+.education-header{
+
+text-align:center;
+max-width:800px;
+margin:auto;
+
+}
+
+
+
+.education-header h2{
+
+font-family:'Cormorant Garamond',serif;
+font-size:75px;
+line-height:1.1;
+margin-bottom:30px;
+
+}
+
+
+
+.education-header p:last-child{
+
+font-size:18px;
+line-height:2;
+color:#6d6056;
+
+}
+
+
+
+.timeline{
+
+max-width:900px;
+margin:100px auto 0;
+position:relative;
+
+}
+
+
+
+.timeline::before{
+
+content:"";
+position:absolute;
+left:50%;
+top:0;
+height:100%;
+width:1px;
+background:#d8c5af;
+
+}
+
+
+
+.timeline-item{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+margin-bottom:90px;
+position:relative;
+
+}
+
+
+
+.timeline-year{
+
+font-family:'Cormorant Garamond',serif;
+font-size:80px;
+color:#c4a586;
+text-align:right;
+
+}
+
+
+
+.timeline-content{
+
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 20px 50px rgba(0,0,0,.05);
+
+}
+
+
+
+.timeline-content h3{
+
+font-family:'Cormorant Garamond',serif;
+font-size:38px;
+margin-bottom:20px;
+
+}
+
+
+
+.timeline-content p{
+
+font-size:16px;
+line-height:1.9;
+color:#6d6056;
+
+}
+
+
+
+@media(max-width:900px){
+
+
+.education-header h2{
+
+font-size:55px;
+
+}
+
+
+.timeline::before{
+
+left:20px;
+
+}
+
+
+
+.timeline-item{
+
+grid-template-columns:1fr;
+gap:20px;
+padding-left:50px;
+
+}
+
+
+
+.timeline-year{
+
+text-align:left;
+font-size:60px;
+
+}
+
+
+}
+
+</style>
+
+
+
+
+
+<script>
+
+
+const educationLanguages={
+
+
+en:{
+
+
+small:"EDUCATION",
+
+title:"My Professional Journey",
+
+intro:"Continuous learning and professional development are essential parts of my work as a clinical psychologist.",
+
+
+t1:"Clinical Psychology Education",
+
+d1:"Academic background in psychology with a focus on understanding human behavior, emotions and mental health.",
+
+
+t2:"Professional Training",
+
+d2:"Continuous participation in educational programs, workshops and advanced psychological approaches.",
+
+
+t3:"Clinical Practice",
+
+d3:"Individual work with clients, providing psychological support in a safe and confidential environment.",
+
+
+t4:"Continuous Development",
+
+d4:"My professional path continues through research, learning and improving therapeutic skills."
+
+},
+
+
+
+ru:{
+
+
+small:"ОБРАЗОВАНИЕ",
+
+title:"Мой профессиональный путь",
+
+intro:"Постоянное обучение и профессиональное развитие являются важной частью моей работы как клинического психолога.",
+
+
+t1:"Образование в области психологии",
+
+d1:"Академическая подготовка в области психологии с фокусом на понимание поведения человека, эмоций и психического здоровья.",
+
+
+t2:"Профессиональное обучение",
+
+d2:"Участие в образовательных программах, тренингах и изучение современных психологических подходов.",
+
+
+t3:"Клиническая практика",
+
+d3:"Индивидуальная работа с клиентами в безопасной и конфиденциальной атмосфере.",
+
+
+t4:"Постоянное развитие",
+
+d4:"Профессиональный путь продолжается через обучение, исследования и совершенствование навыков."
+
+},
+
+
+
+am:{
+
+
+small:"ԿՐԹՈՒԹՅՈՒՆ",
+
+title:"Իմ մասնագիտական ուղին",
+
+intro:"Շարունակական ուսուցումն ու մասնագիտական զարգացումը իմ աշխատանքի կարևոր մասն են։",
+
+
+t1:"Կլինիկական հոգեբանության կրթություն",
+
+d1:"Հոգեբանության ոլորտում կրթություն՝ մարդու վարքի, զգացմունքների և հոգեկան առողջության խոր ըմբռնմամբ։",
+
+
+t2:"Մասնագիտական վերապատրաստումներ",
+
+d2:"Մասնակցություն կրթական ծրագրերի, դասընթացների և ժամանակակից հոգեբանական մոտեցումների ուսումնասիրություն։",
+
+
+t3:"Կլինիկական պրակտիկա",
+
+d3:"Անհատական աշխատանք հաճախորդների հետ՝ անվտանգ և վստահելի միջավայրում։",
+
+
+t4:"Շարունակական զարգացում",
+
+d4:"Մասնագիտական ուղիս շարունակվում է նոր գիտելիքների, հետազոտությունների և հմտությունների զարգացմամբ։"
+
+}
+
+
+}
+
+
+function changeEducation(lang){
+
+
+document.getElementById("educationSmall").innerHTML=educationLanguages[lang].small;
+
+document.getElementById("educationTitle").innerHTML=educationLanguages[lang].title;
+
+document.getElementById("educationIntro").innerHTML=educationLanguages[lang].intro;
+
+
+document.getElementById("edu1Title").innerHTML=educationLanguages[lang].t1;
+document.getElementById("edu1Text").innerHTML=educationLanguages[lang].d1;
+
+
+document.getElementById("edu2Title").innerHTML=educationLanguages[lang].t2;
+document.getElementById("edu2Text").innerHTML=educationLanguages[lang].d2;
+
+
+document.getElementById("edu3Title").innerHTML=educationLanguages[lang].t3;
+document.getElementById("edu3Text").innerHTML=educationLanguages[lang].d3;
+
+
+document.getElementById("edu4Title").innerHTML=educationLanguages[lang].t4;
+document.getElementById("edu4Text").innerHTML=educationLanguages[lang].d4;
+
+
+}
+
+
+</script> 
+    <!-- ================= APPROACH SECTION ================= -->
+
+<section class="approach-section" id="approach">
+
+
+<div class="approach-header">
+
+<p class="section-small" id="approachSmall">
+MY APPROACH
+</p>
+
+
+<h2 id="approachTitle">
+How Therapy Works
+</h2>
+
+
+<p id="approachIntro">
+
+A thoughtful and individual approach that helps you better understand yourself and create meaningful changes.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="approach-container">
+
+
+
+<div class="approach-step">
+
+
+<div class="step-number">
+01
+</div>
+
+
+<div>
+
+<h3 id="step1Title">
+Understanding
+</h3>
+
+
+<p id="step1Text">
+
+We begin by exploring your experiences, emotions,
+thoughts and the situations that bring you to therapy.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="approach-step">
+
+
+<div class="step-number">
+02
+</div>
+
+
+<div>
+
+<h3 id="step2Title">
+Assessment
+</h3>
+
+
+<p id="step2Text">
+
+Together we identify patterns, difficulties and
+internal resources that can support your growth.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="approach-step">
+
+
+<div class="step-number">
+03
+</div>
+
+
+<div>
+
+<h3 id="step3Title">
+Therapeutic Process
+</h3>
+
+
+<p id="step3Text">
+
+Through professional psychological methods,
+we work toward emotional balance and positive change.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="approach-step">
+
+
+<div class="step-number">
+04
+</div>
+
+
+<div>
+
+<h3 id="step4Title">
+Growth
+</h3>
+
+
+<p id="step4Text">
+
+The goal is not only to overcome difficulties,
+but also to develop a deeper connection with yourself.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<style>
+
+
+.approach-section{
+
+padding:150px 9%;
+background:#f7f2eb;
+
+}
+
+
+
+.approach-header{
+
+text-align:center;
+max-width:850px;
+margin:auto;
+
+}
+
+
+
+.approach-header h2{
+
+font-family:'Cormorant Garamond',serif;
+font-size:75px;
+line-height:1.1;
+margin-bottom:30px;
+
+}
+
+
+
+.approach-header p:last-child{
+
+font-size:18px;
+line-height:2;
+color:#6d6056;
+
+}
+
+
+
+.approach-container{
+
+max-width:900px;
+margin:100px auto 0;
+
+}
+
+
+
+.approach-step{
+
+display:grid;
+grid-template-columns:130px 1fr;
+gap:50px;
+align-items:center;
+background:white;
+padding:45px;
+margin-bottom:30px;
+border-radius:35px;
+transition:.4s;
+
+}
+
+
+
+.approach-step:hover{
+
+transform:translateX(10px);
+box-shadow:0 25px 60px rgba(0,0,0,.08);
+
+}
+
+
+
+.step-number{
+
+font-family:'Cormorant Garamond',serif;
+font-size:75px;
+color:#c4a586;
+
+}
+
+
+
+.approach-step h3{
+
+font-family:'Cormorant Garamond',serif;
+font-size:42px;
+margin-bottom:15px;
+
+}
+
+
+
+.approach-step p{
+
+font-size:16px;
+line-height:1.9;
+color:#6d6056;
+
+}
+
+
+
+
+@media(max-width:900px){
+
+
+.approach-header h2{
+
+font-size:55px;
+
+}
+
+
+
+.approach-step{
+
+grid-template-columns:1fr;
+text-align:center;
+
+}
+
+
+
+.step-number{
+
+font-size:60px;
+
+}
+
+
+}
+
+</style>
+
+
+
+
+
+<script>
+
+
+const approachLanguages={
+
+
+en:{
+
+
+small:"MY APPROACH",
+
+title:"How Therapy Works",
+
+intro:"A thoughtful and individual approach that helps you better understand yourself and create meaningful changes.",
+
+
+t1:"Understanding",
+d1:"We begin by exploring your experiences, emotions, thoughts and the situations that bring you to therapy.",
+
+
+t2:"Assessment",
+d2:"Together we identify patterns, difficulties and internal resources that can support your growth.",
+
+
+t3:"Therapeutic Process",
+d3:"Through professional psychological methods, we work toward emotional balance and positive change.",
+
+
+t4:"Growth",
+d4:"The goal is not only to overcome difficulties, but also to develop a deeper connection with yourself."
+
+},
+
+
+
+
+ru:{
+
+
+small:"МОЙ ПОДХОД",
+
+title:"Как проходит терапия",
+
+intro:"Индивидуальный подход, который помогает лучше понять себя и создать устойчивые изменения.",
+
+
+t1:"Понимание",
+d1:"Мы исследуем ваш опыт, эмоции, мысли и ситуации, которые привели вас в терапию.",
+
+
+t2:"Оценка",
+d2:"Вместе мы выявляем внутренние ресурсы и повторяющиеся жизненные patterns.",
+
+
+t3:"Терапевтический процесс",
+d3:"Используя профессиональные методы, мы работаем над эмоциональным балансом и изменениями.",
+
+
+t4:"Развитие",
+d4:"Цель терапии — не только преодолеть трудности, но и глубже понять себя."
+
+},
+
+
+
+
+
+am:{
+
+
+small:"ԻՄ ՄՈՏԵՑՈՒՄԸ",
+
+title:"Ինչպես է անցնում թերապիան",
+
+intro:"Անհատական մոտեցում, որն օգնում է ավելի լավ հասկանալ ինքներդ ձեզ և ստեղծել կայուն փոփոխություններ։",
+
+
+t1:"Հասկանալ",
+
+d1:"Մենք ուսումնասիրում ենք ձեր փորձը, զգացմունքները, մտքերը և այն իրավիճակները, որոնք բերել են ձեզ թերապիայի։",
+
+
+t2:"Գնահատում",
+
+d2:"Միասին բացահայտում ենք դժվարությունները, օրինաչափությունները և ներքին ռեսուրսները։",
+
+
+t3:"Թերապևտիկ գործընթաց",
+
+d3:"Մասնագիտական մեթոդների միջոցով աշխատում ենք հուզական հավասարակշռության և փոփոխությունների վրա։",
+
+
+t4:"Աճ",
+
+d4:"Նպատակը ոչ միայն դժվարությունները հաղթահարելն է, այլ նաև ինքներդ ձեզ ավելի խոր ճանաչելը։"
+
+}
+
+
+}
+
+
+
+function changeApproach(lang){
+
+
+document.getElementById("approachSmall").innerHTML=approachLanguages[lang].small;
+
+document.getElementById("approachTitle").innerHTML=approachLanguages[lang].title;
+
+document.getElementById("approachIntro").innerHTML=approachLanguages[lang].intro;
+
+
+document.getElementById("step1Title").innerHTML=approachLanguages[lang].t1;
+document.getElementById("step1Text").innerHTML=approachLanguages[lang].d1;
+
+
+document.getElementById("step2Title").innerHTML=approachLanguages[lang].t2;
+document.getElementById("step2Text").innerHTML=approachLanguages[lang].d2;
+
+
+document.getElementById("step3Title").innerHTML=approachLanguages[lang].t3;
+document.getElementById("step3Text").innerHTML=approachLanguages[lang].d3;
+
+
+document.getElementById("step4Title").innerHTML=approachLanguages[lang].t4;
+document.getElementById("step4Text").innerHTML=approachLanguages[lang].d4;
+
+
+}
+
+</script>
+    <!-- ================= FAQ SECTION ================= -->
+
+<section class="faq-section" id="faq">
+
+
+<div class="faq-header">
+
+<p class="section-small" id="faqSmall">
+FAQ
+</p>
+
+
+<h2 id="faqTitle">
+Frequently Asked Questions
+</h2>
+
+
+</div>
+
+
+
+
+<div class="faq-container">
+
+
+<div class="faq-item">
+
+
+<button onclick="openFaq(this)">
+
+<span id="faqQ1">
+How long is one therapy session?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+<div class="faq-answer">
+
+<p id="faqA1">
+
+A typical session lasts around 50 minutes.
+The exact format depends on your individual needs.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="faq-item">
+
+
+<button onclick="openFaq(this)">
+
+<span id="faqQ2">
+How often should I attend therapy?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+<div class="faq-answer">
+
+<p id="faqA2">
+
+The frequency is discussed individually and depends
+on your goals and current situation.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="faq-item">
+
+
+<button onclick="openFaq(this)">
+
+<span id="faqQ3">
+Is everything discussed confidential?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+<div class="faq-answer">
+
+<p id="faqA3">
+
+Yes. Confidentiality and a safe therapeutic environment
+are fundamental parts of psychological work.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="faq-item">
+
+
+<button onclick="openFaq(this)">
+
+<span id="faqQ4">
+Is online therapy available?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+<div class="faq-answer">
+
+<p id="faqA4">
+
+Online consultations are available depending on your location
+and personal preferences.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- ================= TESTIMONIALS SECTION ================= -->
+
+
+<section class="testimonials-section">
+
+
+<div class="testimonials-header">
+
+
+<p class="section-small">
+TESTIMONIALS
+</p>
+
+
+<h2 id="testimonialsTitle">
+What Clients Say
+</h2>
+
+
+</div>
+
+
+
+
+<div class="testimonial-grid">
+
+
+
+<div class="testimonial-card">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p id="review1">
+
+"A warm and safe atmosphere where I felt truly understood."
+
+</p>
+
+</div>
+
+
+
+
+<div class="testimonial-card">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p id="review2">
+
+"Therapy helped me understand myself and create positive changes."
+
+</p>
+
+</div>
+
+
+
+
+<div class="testimonial-card">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p id="review3">
+
+"A professional and compassionate approach."
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<style>
+
+
+.faq-section{
+
+padding:150px 9%;
+background:#faf8f4;
+
+}
+
+
+
+.faq-header{
+
+text-align:center;
+
+}
+
+
+
+.faq-header h2,
+.testimonials-header h2{
+
+font-family:'Cormorant Garamond',serif;
+font-size:75px;
+line-height:1.1;
+
+}
+
+
+
+.faq-container{
+
+max-width:900px;
+margin:80px auto;
+
+}
+
+
+
+.faq-item{
+
+background:white;
+border-radius:30px;
+margin-bottom:20px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.04);
+
+}
+
+
+
+.faq-item button{
+
+width:100%;
+padding:35px;
+background:none;
+border:none;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-family:'Montserrat',sans-serif;
+font-size:17px;
+color:#43362d;
+cursor:pointer;
+text-align:left;
+
+}
+
+
+
+.faq-item button span:last-child{
+
+font-size:30px;
+color:#b99876;
+
+}
+
+
+
+.faq-answer{
+
+max-height:0;
+overflow:hidden;
+transition:.5s;
+
+}
+
+
+
+.faq-answer p{
+
+padding:0 35px 35px;
+line-height:1.8;
+color:#6d6056;
+
+}
+
+
+
+.faq-item.active .faq-answer{
+
+max-height:200px;
+
+}
+
+
+
+
+
+.testimonials-section{
+
+padding:130px 9%;
+background:#f7f2eb;
+
+}
+
+
+
+.testimonials-header{
+
+text-align:center;
+
+}
+
+
+
+.testimonial-grid{
+
+margin-top:80px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+
+
+.testimonial-card{
+
+background:white;
+padding:45px;
+border-radius:35px;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,.05);
+
+}
+
+
+
+.stars{
+
+color:#b99876;
+letter-spacing:5px;
+font-size:18px;
+margin-bottom:25px;
+
+}
+
+
+
+.testimonial-card p{
+
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+line-height:1.5;
+
+}
+
+
+
+
+@media(max-width:900px){
+
+
+.faq-header h2,
+.testimonials-header h2{
+
+font-size:55px;
+
+}
+
+
+
+.testimonial-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+</style>
+
+
+
+
+
+<script>
+
+
+function openFaq(button){
+
+let item=button.parentElement;
+
+item.classList.toggle("active");
+
+}
+
+
+
+
+const faqLanguages={
+
+
+en:{
+
+
+title:"Frequently Asked Questions",
+
+q1:"How long is one therapy session?",
+
+a1:"A typical session lasts around 50 minutes. The exact format depends on your individual needs.",
+
+
+q2:"How often should I attend therapy?",
+
+a2:"The frequency is discussed individually and depends on your goals and current situation.",
+
+
+q3:"Is everything discussed confidential?",
+
+a3:"Yes. Confidentiality and a safe therapeutic environment are fundamental parts of psychological work.",
+
+
+q4:"Is online therapy available?",
+
+a4:"Online consultations are available depending on your location and personal preferences."
+
+
+},
+
+
+
+
+ru:{
+
+
+title:"Часто задаваемые вопросы",
+
+q1:"Сколько длится одна сессия?",
+
+a1:"Обычно сессия длится около 50 минут. Формат зависит от ваших индивидуальных потребностей.",
+
+
+q2:"Как часто нужно посещать терапию?",
+
+a2:"Частота встреч определяется индивидуально в зависимости от целей и ситуации.",
+
+
+q3:"Сохраняется ли конфиденциальность?",
+
+a3:"Да. Конфиденциальность является основой психологической работы.",
+
+
+q4:"Доступна ли онлайн-терапия?",
+
+a4:"Онлайн-консультации доступны в зависимости от ваших предпочтений."
+
+
+},
+
+
+
+
+
+am:{
+
+
+title:"Հաճախ տրվող հարցեր",
+
+q1:"Որքա՞ն է տևում մեկ սեանսը։",
+
+a1:"Սովորաբար սեանսը տևում է մոտ 50 րոպե։",
+
+
+q2:"Որքա՞ն հաճախ պետք է այցելել թերապիայի։",
+
+a2:"Հաճախականությունը որոշվում է անհատապես։",
+
+
+q3:"Արդյո՞ք ամեն ինչ գաղտնի է մնում։",
+
+a3:"Այո, գաղտնիությունը հոգեբանական աշխատանքի կարևոր հիմքն է։",
+
+
+q4:"Հնարավո՞ր է օնլայն թերապիա։",
+
+a4:"Այո, հասանելի են օնլայն խորհրդատվություններ։"
+
+
+}
+
+
+}
+
+
+
+function changeFAQ(lang){
+
+
+document.getElementById("faqTitle").innerHTML=faqLanguages[lang].title;
+
+
+document.getElementById("faqQ1").innerHTML=faqLanguages[lang].q1;
+document.getElementById("faqA1").innerHTML=faqLanguages[lang].a1;
+
+
+document.getElementById("faqQ2").innerHTML=faqLanguages[lang].q2;
+document.getElementById("faqA2").innerHTML=faqLanguages[lang].a2;
+
+
+document.getElementById("faqQ3").innerHTML=faqLanguages[lang].q3;
+document.getElementById("faqA3").innerHTML=faqLanguages[lang].a3;
+
+
+document.getElementById("faqQ4").innerHTML=faqLanguages[lang].q4;
+document.getElementById("faqA4").innerHTML=faqLanguages[lang].a4;
+
+
+}
+
+</script>
+    <!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact-section" id="contact">
+
+
+<div class="contact-box">
+
+
+<div class="contact-text">
+
+
+<p class="section-small" id="contactSmall">
+CONTACT
+</p>
+
+
+<h2 id="contactTitle">
+Let's Begin Your Journey
+</h2>
+
+
+<p id="contactIntro">
+
+If you feel ready to take the first step,
+I would be happy to support you on your path.
+
+</p>
+
+
+
+<a href="#" class="contact-button" id="contactButton">
+
+Book A Consultation
+
+</a>
+
+
+</div>
+
+
+
+
+<div class="contact-details">
+
+
+<div class="detail">
+
+<h4 id="locationTitle">
+Location
+</h4>
+
+<p>
+Yerevan, Armenia
+</p>
+
+</div>
+
+
+
+
+<div class="detail">
+
+<h4 id="emailTitle">
+Email
+</h4>
+
+<p>
+your@email.com
+</p>
+
+</div>
+
+
+
+
+
+<div class="detail">
+
+<h4 id="socialTitle">
+Social Media
+</h4>
+
+<p>
+Instagram: @yourinstagram
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+
+<footer class="footer">
+
+
+<div class="footer-logo">
+
+Anna Kankanyan
+
+</div>
+
+
+<p id="footerText">
+
+Clinical Psychologist
+
+</p>
+
+
+<div class="footer-links">
+
+<a href="#">
+Instagram
+</a>
+
+<a href="#">
+Contact
+</a>
+
+<a href="#">
+Privacy Policy
+</a>
+
+</div>
+
+
+<p class="copyright">
+
+© 2026 Anna Kankanyan. All rights reserved.
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+
+<style>
+
+
+.contact-section{
+
+padding:140px 9%;
+
+}
+
+
+
+.contact-box{
+
+background:#eee4d8;
+border-radius:50px;
+padding:90px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+
+}
+
+
+
+.contact-text h2{
+
+font-family:'Cormorant Garamond',serif;
+font-size:75px;
+line-height:1.1;
+margin-bottom:30px;
+
+}
+
+
+
+.contact-text p{
+
+font-size:18px;
+line-height:2;
+color:#6d6056;
+
+}
+
+
+
+.contact-button{
+
+display:inline-block;
+margin-top:40px;
+background:#b99876;
+color:white;
+padding:18px 45px;
+border-radius:50px;
+text-decoration:none;
+transition:.4s;
+
+}
+
+
+
+.contact-button:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+
+.contact-details{
+
+background:white;
+padding:50px;
+border-radius:35px;
+
+}
+
+
+
+.detail{
+
+padding:25px 0;
+border-bottom:1px solid #eadfd2;
+
+}
+
+
+
+.detail:last-child{
+
+border:none;
+
+}
+
+
+
+.detail h4{
+
+font-family:'Cormorant Garamond',serif;
+font-size:32px;
+margin-bottom:10px;
+
+}
+
+
+
+.detail p{
+
+color:#6d6056;
+
+}
+
+
+
+
+.footer{
+
+background:#43362d;
+color:white;
+padding:60px 9%;
+text-align:center;
+
+}
+
+
+
+.footer-logo{
+
+font-family:'Cormorant Garamond',serif;
+font-size:45px;
+margin-bottom:15px;
+
+}
+
+
+
+.footer p{
+
+opacity:.8;
+
+}
+
+
+
+.footer-links{
+
+margin:30px 0;
+display:flex;
+justify-content:center;
+gap:35px;
+
+}
+
+
+
+.footer-links a{
+
+color:white;
+text-decoration:none;
+font-size:14px;
+
+}
+
+
+
+.copyright{
+
+font-size:13px;
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+.contact-box{
+
+grid-template-columns:1fr;
+padding:50px 30px;
+
+}
+
+
+
+.contact-text h2{
+
+font-size:55px;
+
+}
+
+
+
+.footer-links{
+
+flex-direction:column;
+
+}
+
+
+}
+
+
+</style>
+
+
+
+
+
+
+
+<script>
+
+
+const contactLanguages={
+
+
+en:{
+
+
+small:"CONTACT",
+
+title:"Let's Begin Your Journey",
+
+intro:"If you feel ready to take the first step, I would be happy to support you on your path.",
+
+button:"Book A Consultation",
+
+location:"Location",
+
+email:"Email",
+
+social:"Social Media"
+
+
+},
+
+
+
+ru:{
+
+
+small:"КОНТАКТЫ",
+
+title:"Начнем этот путь вместе",
+
+intro:"Если вы готовы сделать первый шаг, я буду рада поддержать вас на этом пути.",
+
+button:"Записаться на консультацию",
+
+location:"Местоположение",
+
+email:"Электронная почта",
+
+social:"Социальные сети"
+
+
+},
+
+
+
+am:{
+
+
+small:"ԿԱՊ",
+
+title:"Սկսենք այս ճանապարհը միասին",
+
+intro:"Եթե պատրաստ եք անել առաջին քայլը, ես ուրախ կլինեմ աջակցել ձեզ այս ճանապարհին։",
+
+button:"Գրանցվել խորհրդատվության",
+
+location:"Վայր",
+
+email:"Էլ․ հասցե",
+
+social:"Սոցիալական ցանցեր"
+
+
+}
+
+
+}
+
+
+
+
+function changeContact(lang){
+
+
+document.getElementById("contactSmall").innerHTML=contactLanguages[lang].small;
+
+document.getElementById("contactTitle").innerHTML=contactLanguages[lang].title;
+
+document.getElementById("contactIntro").innerHTML=contactLanguages[lang].intro;
+
+document.getElementById("contactButton").innerHTML=contactLanguages[lang].button;
+
+
+document.getElementById("locationTitle").innerHTML=contactLanguages[lang].location;
+
+document.getElementById("emailTitle").innerHTML=contactLanguages[lang].email;
+
+document.getElementById("socialTitle").innerHTML=contactLanguages[lang].social;
+
+
+}
+
+
+</script>
+    <!-- ================= FINAL POLISH ================= -->
+
+
+<style>
+
+
+/* SCROLL REVEAL ANIMATION */
+
+
+.about-section,
+.services-section,
+.education-section,
+.approach-section,
+.faq-section,
+.testimonials-section,
+.contact-section{
+
+opacity:0;
+transform:translateY(60px);
+transition:1.2s ease;
+
+}
+
+
+
+.show-section{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+
+
+
+/* MOBILE MENU */
+
+
+.mobile-menu-btn{
+
+display:none;
+font-size:30px;
+cursor:pointer;
+
+}
+
+
+
+@media(max-width:900px){
+
+
+.mobile-menu-btn{
+
+display:block;
+
+}
+
+
+.mobile-menu{
+
+position:fixed;
+top:0;
+right:-100%;
+width:80%;
+height:100vh;
+background:#faf8f4;
+padding:100px 40px;
+transition:.5s;
+z-index:1000;
+
+}
+
+
+.mobile-menu.active{
+
+right:0;
+
+}
+
+
+.mobile-menu a{
+
+display:block;
+text-decoration:none;
+color:#43362d;
+font-size:22px;
+margin-bottom:30px;
+font-family:'Cormorant Garamond',serif;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+
+
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+
+<a href="#">
+Home
+</a>
+
+
+<a href="#about">
+About
+</a>
+
+
+<a href="#services">
+Services
+</a>
+
+
+<a href="#education">
+Education
+</a>
+
+
+<a href="#faq">
+FAQ
+</a>
+
+
+<a href="#contact">
+Contact
+</a>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+/* ================= CONNECT ALL LANGUAGES ================= */
+
+
+function changeLang(lang){
+
+
+/* HERO */
+
+document.getElementById("smallTitle").innerHTML=language[lang].small;
+
+document.getElementById("heroTitle").innerHTML=language[lang].title;
+
+document.getElementById("heroText").innerHTML=language[lang].text;
+
+document.getElementById("quote").innerHTML=language[lang].quote;
+
+document.getElementById("btn1").innerHTML=language[lang].book;
+
+document.getElementById("btn2").innerHTML=language[lang].about;
+
+
+/* ABOUT */
+
+changeAbout(lang);
+
+
+/* SERVICES */
+
+changeServices(lang);
+
+
+/* EDUCATION */
+
+changeEducation(lang);
+
+
+/* APPROACH */
+
+changeApproach(lang);
+
+
+/* FAQ */
+
+changeFAQ(lang);
+
+
+/* CONTACT */
+
+changeContact(lang);
+
+
+
+}
+
+
+
+
+
+/* ================= SCROLL ANIMATION ================= */
+
+
+
+const sections=document.querySelectorAll(
+
+".about-section, .services-section, .education-section, .approach-section, .faq-section, .testimonials-section, .contact-section"
+
+);
+
+
+
+const observer=new IntersectionObserver(
+
+entries=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show-section");
+
+}
+
+
+});
+
+
+},
+
+{
+
+threshold:.15
+
+}
+
+);
+
+
+
+sections.forEach(section=>{
+
+observer.observe(section);
+
+});
+
+
+
+
+
+/* ================= MOBILE MENU ================= */
+
+
+function openMobileMenu(){
+
+document
+.getElementById("mobileMenu")
+.classList.toggle("active");
+
+}
+
+
+
+</script>
 </body>
 </html>
