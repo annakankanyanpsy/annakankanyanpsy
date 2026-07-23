@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Anna Kankanyan | Clinical Psychologist</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
 *{
   margin:0;
@@ -268,71 +255,6 @@ h1{
   .logo{font-size:28px;}
 }
 
-</style>
-
-</head>
-
-<body>
-
-<nav id="navbar">
-  <div class="logo" id="siteLogo">Anna Kankanyan</div>
-
-  <div class="menu">
-    <a href="#" id="menuHome">Home</a>
-    <a href="#about" id="menuAbout">About</a>
-    <a href="#services" id="menuServices">Services</a>
-    <a href="#education" id="menuEducation">Education</a>
-    <a href="#faq" id="menuFaq">FAQ</a>
-    <a href="#contact" id="menuContact">Contact</a>
-  </div>
-
-  <div class="right">
-    <div class="lang">
-      <button onclick="changeLang('en')">EN</button>
-      <button onclick="changeLang('ru')">RU</button>
-      <button onclick="changeLang('am')">AM</button>
-    </div>
-    <div class="mobile-menu-btn" onclick="openMobileMenu()"></div>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="left">
-    <div class="small" id="smallTitle">Clinical Psychology</div>
-    <h1 id="heroTitle">Helping You<br>Find Yourself</h1>
-    <p class="intro" id="heroText">Therapy is a gentle journey toward understanding yourself, healing emotional wounds, and creating a life with greater clarity, balance, and inner peace.</p>
-    <div class="quote" id="quote">"Every meaningful change begins with feeling truly heard."</div>
-    <div class="buttons">
-      <a href="#" class="primary" id="btn1">Book Consultation</a>
-      <a href="#" class="secondary" id="btn2">About Me</a>
-    </div>
-  </div>
-  <div class="photo">
-    <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna.jpg?v=1784572329" alt="Anna Kankanyan">
-  </div>
-  <div class="scroll">SCROLL</div>
-</section>
-
-<!-- ================= ABOUT SECTION ================= -->
-<section class="about-section" id="about">
-  <div class="about-image">
-    <div class="about-shape"></div>
-    <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna_100a38e3-062b-4a5e-9a59-c28303c12fe1.jpg?v=1784831465" alt="Anna Kankanyan">
-  </div>
-  <div class="about-content">
-    <p class="section-small" id="aboutSmall">ABOUT ME</p>
-    <h2 id="aboutTitle">A Safe Space<br>For Personal Growth</h2>
-    <p id="aboutDescription">I am Anna Kankanyan, Clinical Psychologist. My work is based on an individual approach, scientific psychological methods and a deep understanding of human emotions.</p>
-    <div class="about-info">
-      <div><span>01</span><p id="info1">Clinical Psychology</p></div>
-      <div><span>02</span><p id="info2">Individual Therapy</p></div>
-      <div><span>03</span><p id="info3">Personal Development</p></div>
-    </div>
-    <div class="signature">Anna Kankanyan</div>
-  </div>
-</section>
-
-<style>
 .about-section{padding:140px 9%;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;}
 .about-image{position:relative;display:flex;justify-content:center;}
 .about-image img{width:430px;height:560px;object-fit:cover;border-radius:35px;position:relative;z-index:2;box-shadow:0 35px 80px rgba(0,0,0,.12);}
@@ -351,44 +273,7 @@ h1{
   .about-content h2{font-size:50px;}
   .about-info{justify-content:center;flex-direction:column;}
 }
-</style>
 
-<!-- ================= SERVICES SECTION ================= -->
-<section class="services-section" id="services">
-  <div class="services-header">
-    <p class="section-small" id="servicesSmall">SERVICES</p>
-    <h2 id="servicesTitle">Areas Where I Can Help</h2>
-    <p id="servicesIntro">Professional psychological support focused on understanding yourself, building emotional balance and improving quality of life.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="number">01</div>
-      <h3 id="service1Title">Individual Therapy</h3>
-      <p id="service1Text">A confidential space where we work with emotions, thoughts, anxiety, stress and personal difficulties.</p>
-      <a href="#">Learn more →</a>
-    </div>
-    <div class="service-card">
-      <div class="number">02</div>
-      <h3 id="service2Title">Psychosomatics</h3>
-      <p id="service2Text">Exploring the connection between emotional experiences, stress and physical sensations.</p>
-      <a href="#">Learn more →</a>
-    </div>
-    <div class="service-card">
-      <div class="number">03</div>
-      <h3 id="service3Title">Self Development</h3>
-      <p id="service3Text">Working on self-esteem, personal boundaries, relationships and inner resources.</p>
-      <a href="#">Learn more →</a>
-    </div>
-    <div class="service-card">
-      <div class="number">04</div>
-      <h3 id="service4Title">Emotional Support</h3>
-      <p id="service4Text">Support during difficult life periods, transitions and emotional challenges.</p>
-      <a href="#">Learn more →</a>
-    </div>
-  </div>
-</section>
-
-<style>
 .services-section{padding:140px 9%;background:#f7f2eb;}
 .services-header{text-align:center;max-width:800px;margin:auto;}
 .services-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;font-weight:600;margin-bottom:30px;}
@@ -406,91 +291,7 @@ h1{
   .services-grid{grid-template-columns:1fr;}
   .services-header h2{font-size:55px;}
 }
-</style>
 
-<!-- ================= EDUCATION SECTION ================= -->
-<section class="education-section" id="education">
-  <div class="education-header">
-    <p class="section-small" id="educationSmall">EDUCATION</p>
-    <h2 id="educationTitle">My Professional Journey</h2>
-    <p id="educationIntro">My academic path combines clinical psychology, psychoanalytic education and continuous professional development.</p>
-  </div>
-  <div class="timeline">
-    
-    <!-- Item 01 -->
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-year">01</div>
-        <div class="timeline-image-wrapper">
-          <!-- TODO: Replace this URL with your actual edu1.jpg link if you have one -->
-          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna.jpg?v=1784572329" alt="Russian-Armenian University" class="timeline-image">
-        </div>
-        <div class="timeline-video-wrapper">
-          <iframe src="https://www.youtube.com/embed/kqUFDCMXqpY" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="timeline-content">
-        <h3 id="edu1Title">Bachelor's Degree — Russian-Armenian (Slavonic) University</h3>
-        <p id="edu1Text">My first professional step in psychology began at the Russian-Armenian (Slavonic) University, where I completed my Bachelor's degree after four years of study.</p>
-      </div>
-    </div>
-
-    <!-- Item 02 -->
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-year">02</div>
-        <div class="timeline-image-wrapper">
-          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/edu2.jpg?v=1784831461" alt="Yerevan State University" class="timeline-image">
-        </div>
-        <div class="timeline-video-wrapper">
-          <iframe src="https://www.youtube.com/embed/JiLNdRg8lmY" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="timeline-content">
-        <h3 id="edu2Title">Clinical Psychology — Yerevan State University</h3>
-        <p id="edu2Text">To gain deeper professional specialization, I continued my education at Yerevan State University in the field of Clinical Psychology.</p>
-      </div>
-    </div>
-
-    <!-- Item 03 -->
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-year">03</div>
-        <div class="timeline-image-wrapper">
-          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/edu3.jpg?v=1784831434" alt="Saint Petersburg Institute" class="timeline-image">
-        </div>
-        <div class="timeline-video-wrapper">
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="timeline-content">
-        <h3 id="edu3Title">Psychoanalytic Education — Saint Petersburg</h3>
-        <p id="edu3Text">I continued my professional development at the East European Institute of Psychoanalysis, one of the leading psychoanalytic institutions in Saint Petersburg.</p>
-      </div>
-    </div>
-
-    <!-- Item 04 -->
-    <div class="timeline-item">
-      <div class="timeline-left">
-        <div class="timeline-year">04</div>
-        <div class="timeline-image-wrapper">
-          <!-- TODO: Replace this URL with your actual edu4.jpg link if you have one -->
-          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna_100a38e3-062b-4a5e-9a59-c28303c12fe1.jpg?v=1784831465" alt="Professional Experience" class="timeline-image">
-        </div>
-        <div class="timeline-video-wrapper">
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" title="Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="timeline-content">
-        <h3 id="edu4Title">10 Years of Professional Experience</h3>
-        <p id="edu4Text">I have been working in the field of psychology for 10 years, continuously developing my knowledge and therapeutic skills.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<style>
 .education-section{padding:150px 9%;background:#faf8f4;}
 .education-header{text-align:center;max-width:800px;margin:auto;}
 .education-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;margin-bottom:30px;}
@@ -602,9 +403,242 @@ h1{
   }
   .timeline-content h3{font-size:28px;}
 }
+
+.approach-section{padding:150px 9%;background:#f7f2eb;}
+.approach-header{text-align:center;max-width:850px;margin:auto;}
+.approach-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;margin-bottom:30px;}
+.approach-header p:last-child{font-size:18px;line-height:2;color:#6d6056;}
+.approach-container{max-width:900px;margin:100px auto 0;}
+.approach-step{display:grid;grid-template-columns:130px 1fr;gap:50px;align-items:center;background:white;padding:45px;margin-bottom:30px;border-radius:35px;transition:.4s;}
+.approach-step:hover{transform:translateX(10px);box-shadow:0 25px 60px rgba(0,0,0,.08);}
+.step-number{font-family:'Cormorant Garamond',serif;font-size:75px;color:#c4a586;}
+.approach-step h3{font-family:'Cormorant Garamond',serif;font-size:42px;margin-bottom:15px;}
+.approach-step p{font-size:16px;line-height:1.9;color:#6d6056;}
+@media(max-width:900px){
+  .approach-header h2{font-size:55px;}
+  .approach-step{grid-template-columns:1fr;text-align:center;}
+  .step-number{font-size:60px;}
+}
+
+.faq-section{padding:150px 9%;background:#faf8f4;}
+.faq-header{text-align:center;}
+.faq-header h2,.testimonials-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;}
+.faq-container{max-width:900px;margin:80px auto;}
+.faq-item{background:white;border-radius:30px;margin-bottom:20px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.04);}
+.faq-item button{width:100%;padding:35px;background:none;border:none;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif;font-size:17px;color:#43362d;cursor:pointer;text-align:left;}
+.faq-item button span:last-child{font-size:30px;color:#b99876;}
+.faq-answer{max-height:0;overflow:hidden;transition:.5s;}
+.faq-answer p{padding:0 35px 35px;line-height:1.8;color:#6d6056;}
+.faq-item.active .faq-answer{max-height:200px;}
+.testimonials-section{padding:130px 9%;background:#f7f2eb;}
+.testimonials-header{text-align:center;}
+.testimonial-grid{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.testimonial-card{background:white;padding:45px;border-radius:35px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.05);}
+.stars{color:#b99876;letter-spacing:5px;font-size:18px;margin-bottom:25px;}
+.testimonial-card p{font-family:'Cormorant Garamond',serif;font-size:28px;line-height:1.5;}
+@media(max-width:900px){
+  .faq-header h2,.testimonials-header h2{font-size:55px;}
+  .testimonial-grid{grid-template-columns:1fr;}
+}
+
+.contact-section{padding:140px 9%;}
+.contact-box{background:#eee4d8;border-radius:50px;padding:90px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.contact-text h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;margin-bottom:30px;}
+.contact-text p{font-size:18px;line-height:2;color:#6d6056;}
+.contact-button{display:inline-block;margin-top:40px;background:#b99876;color:white;padding:18px 45px;border-radius:50px;text-decoration:none;transition:.4s;}
+.contact-button:hover{transform:translateY(-5px);}
+.contact-details{background:white;padding:50px;border-radius:35px;}
+.detail{padding:25px 0;border-bottom:1px solid #eadfd2;}
+.detail:last-child{border:none;}
+.detail h4{font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:10px;}
+.detail p{color:#6d6056;}
+.footer{background:#43362d;color:white;padding:60px 9%;text-align:center;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:45px;margin-bottom:15px;}
+.footer p{opacity:.8;}
+.footer-links{margin:30px 0;display:flex;justify-content:center;gap:35px;}
+.footer-links a{color:white;text-decoration:none;font-size:14px;}
+.copyright{font-size:13px;}
+@media(max-width:900px){
+  .contact-box{grid-template-columns:1fr;padding:50px 30px;}
+  .contact-text h2{font-size:55px;}
+  .footer-links{flex-direction:column;}
+}
+
+.about-section,.services-section,.education-section,.approach-section,.faq-section,.testimonials-section,.contact-section{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1.2s ease;
+}
+.show-section{opacity:1;transform:translateY(0);}
+
+.mobile-menu-btn{display:none;font-size:30px;cursor:pointer;color:#43362d;}
+@media(max-width:900px){
+  .mobile-menu-btn{display:block;}
+  .mobile-menu{position:fixed;top:0;right:-100%;width:80%;height:100vh;background:#faf8f4;padding:100px 40px;transition:.5s;z-index:1000;}
+  .mobile-menu.active{right:0;}
+  .mobile-menu a{display:block;text-decoration:none;color:#43362d;font-size:22px;margin-bottom:30px;font-family:'Cormorant Garamond',serif;}
+}
 </style>
 
-<!-- ================= APPROACH SECTION ================= -->
+<nav id="navbar">
+  <div class="logo" id="siteLogo">Anna Kankanyan</div>
+  <div class="menu">
+    <a href="#" id="menuHome">Home</a>
+    <a href="#about" id="menuAbout">About</a>
+    <a href="#services" id="menuServices">Services</a>
+    <a href="#education" id="menuEducation">Education</a>
+    <a href="#faq" id="menuFaq">FAQ</a>
+    <a href="#contact" id="menuContact">Contact</a>
+  </div>
+  <div class="right">
+    <div class="lang">
+      <button onclick="changeLang('en')">EN</button>
+      <button onclick="changeLang('ru')">RU</button>
+      <button onclick="changeLang('am')">AM</button>
+    </div>
+    <div class="mobile-menu-btn" onclick="openMobileMenu()"></div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="left">
+    <div class="small" id="smallTitle">Clinical Psychology</div>
+    <h1 id="heroTitle">Helping You<br>Find Yourself</h1>
+    <p class="intro" id="heroText">Therapy is a gentle journey toward understanding yourself, healing emotional wounds, and creating a life with greater clarity, balance, and inner peace.</p>
+    <div class="quote" id="quote">"Every meaningful change begins with feeling truly heard."</div>
+    <div class="buttons">
+      <a href="#" class="primary" id="btn1">Book Consultation</a>
+      <a href="#" class="secondary" id="btn2">About Me</a>
+    </div>
+  </div>
+  <div class="photo">
+    <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna.jpg?v=1784572329" alt="Anna Kankanyan">
+  </div>
+  <div class="scroll">SCROLL</div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-image">
+    <div class="about-shape"></div>
+    <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna_100a38e3-062b-4a5e-9a59-c28303c12fe1.jpg?v=1784831465" alt="Anna Kankanyan">
+  </div>
+  <div class="about-content">
+    <p class="section-small" id="aboutSmall">ABOUT ME</p>
+    <h2 id="aboutTitle">A Safe Space<br>For Personal Growth</h2>
+    <p id="aboutDescription">I am Anna Kankanyan, Clinical Psychologist. My work is based on an individual approach, scientific psychological methods and a deep understanding of human emotions.</p>
+    <div class="about-info">
+      <div><span>01</span><p id="info1">Clinical Psychology</p></div>
+      <div><span>02</span><p id="info2">Individual Therapy</p></div>
+      <div><span>03</span><p id="info3">Personal Development</p></div>
+    </div>
+    <div class="signature">Anna Kankanyan</div>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="services-header">
+    <p class="section-small" id="servicesSmall">SERVICES</p>
+    <h2 id="servicesTitle">Areas Where I Can Help</h2>
+    <p id="servicesIntro">Professional psychological support focused on understanding yourself, building emotional balance and improving quality of life.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="number">01</div>
+      <h3 id="service1Title">Individual Therapy</h3>
+      <p id="service1Text">A confidential space where we work with emotions, thoughts, anxiety, stress and personal difficulties.</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="service-card">
+      <div class="number">02</div>
+      <h3 id="service2Title">Psychosomatics</h3>
+      <p id="service2Text">Exploring the connection between emotional experiences, stress and physical sensations.</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="service-card">
+      <div class="number">03</div>
+      <h3 id="service3Title">Self Development</h3>
+      <p id="service3Text">Working on self-esteem, personal boundaries, relationships and inner resources.</p>
+      <a href="#">Learn more →</a>
+    </div>
+    <div class="service-card">
+      <div class="number">04</div>
+      <h3 id="service4Title">Emotional Support</h3>
+      <p id="service4Text">Support during difficult life periods, transitions and emotional challenges.</p>
+      <a href="#">Learn more →</a>
+    </div>
+  </div>
+</section>
+
+<section class="education-section" id="education">
+  <div class="education-header">
+    <p class="section-small" id="educationSmall">EDUCATION</p>
+    <h2 id="educationTitle">My Professional Journey</h2>
+    <p id="educationIntro">My academic path combines clinical psychology, psychoanalytic education and continuous professional development.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">01</div>
+        <div class="timeline-image-wrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna.jpg?v=1784572329" alt="Russian-Armenian University" class="timeline-image">
+        </div>
+        <div class="timeline-video-wrapper">
+          <iframe src="https://www.youtube.com/embed/kqUFDCMXqpY" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="timeline-content">
+        <h3 id="edu1Title">Bachelor's Degree — Russian-Armenian (Slavonic) University</h3>
+        <p id="edu1Text">My first professional step in psychology began at the Russian-Armenian (Slavonic) University, where I completed my Bachelor's degree after four years of study.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">02</div>
+        <div class="timeline-image-wrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/edu2.jpg?v=1784831461" alt="Yerevan State University" class="timeline-image">
+        </div>
+        <div class="timeline-video-wrapper">
+          <iframe src="https://www.youtube.com/embed/JiLNdRg8lmY" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="timeline-content">
+        <h3 id="edu2Title">Clinical Psychology — Yerevan State University</h3>
+        <p id="edu2Text">To gain deeper professional specialization, I continued my education at Yerevan State University in the field of Clinical Psychology.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">03</div>
+        <div class="timeline-image-wrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/edu3.jpg?v=1784831434" alt="Saint Petersburg Institute" class="timeline-image">
+        </div>
+        <div class="timeline-video-wrapper">
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="timeline-content">
+        <h3 id="edu3Title">Psychoanalytic Education — Saint Petersburg</h3>
+        <p id="edu3Text">I continued my professional development at the East European Institute of Psychoanalysis, one of the leading psychoanalytic institutions in Saint Petersburg.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">04</div>
+        <div class="timeline-image-wrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna_100a38e3-062b-4a5e-9a59-c28303c12fe1.jpg?v=1784831465" alt="Professional Experience" class="timeline-image">
+        </div>
+        <div class="timeline-video-wrapper">
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" title="Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="timeline-content">
+        <h3 id="edu4Title">10 Years of Professional Experience</h3>
+        <p id="edu4Text">I have been working in the field of psychology for 10 years, continuously developing my knowledge and therapeutic skills.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="approach-section" id="approach">
   <div class="approach-header">
     <p class="section-small" id="approachSmall">MY APPROACH</p>
@@ -643,25 +677,6 @@ h1{
   </div>
 </section>
 
-<style>
-.approach-section{padding:150px 9%;background:#f7f2eb;}
-.approach-header{text-align:center;max-width:850px;margin:auto;}
-.approach-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;margin-bottom:30px;}
-.approach-header p:last-child{font-size:18px;line-height:2;color:#6d6056;}
-.approach-container{max-width:900px;margin:100px auto 0;}
-.approach-step{display:grid;grid-template-columns:130px 1fr;gap:50px;align-items:center;background:white;padding:45px;margin-bottom:30px;border-radius:35px;transition:.4s;}
-.approach-step:hover{transform:translateX(10px);box-shadow:0 25px 60px rgba(0,0,0,.08);}
-.step-number{font-family:'Cormorant Garamond',serif;font-size:75px;color:#c4a586;}
-.approach-step h3{font-family:'Cormorant Garamond',serif;font-size:42px;margin-bottom:15px;}
-.approach-step p{font-size:16px;line-height:1.9;color:#6d6056;}
-@media(max-width:900px){
-  .approach-header h2{font-size:55px;}
-  .approach-step{grid-template-columns:1fr;text-align:center;}
-  .step-number{font-size:60px;}
-}
-</style>
-
-<!-- ================= FAQ SECTION ================= -->
 <section class="faq-section" id="faq">
   <div class="faq-header">
     <p class="section-small" id="faqSmall">FAQ</p>
@@ -707,7 +722,6 @@ h1{
   </div>
 </section>
 
-<!-- ================= TESTIMONIALS SECTION ================= -->
 <section class="testimonials-section">
   <div class="testimonials-header">
     <p class="section-small">TESTIMONIALS</p>
@@ -729,30 +743,6 @@ h1{
   </div>
 </section>
 
-<style>
-.faq-section{padding:150px 9%;background:#faf8f4;}
-.faq-header{text-align:center;}
-.faq-header h2,.testimonials-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;}
-.faq-container{max-width:900px;margin:80px auto;}
-.faq-item{background:white;border-radius:30px;margin-bottom:20px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.04);}
-.faq-item button{width:100%;padding:35px;background:none;border:none;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif;font-size:17px;color:#43362d;cursor:pointer;text-align:left;}
-.faq-item button span:last-child{font-size:30px;color:#b99876;}
-.faq-answer{max-height:0;overflow:hidden;transition:.5s;}
-.faq-answer p{padding:0 35px 35px;line-height:1.8;color:#6d6056;}
-.faq-item.active .faq-answer{max-height:200px;}
-.testimonials-section{padding:130px 9%;background:#f7f2eb;}
-.testimonials-header{text-align:center;}
-.testimonial-grid{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
-.testimonial-card{background:white;padding:45px;border-radius:35px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.05);}
-.stars{color:#b99876;letter-spacing:5px;font-size:18px;margin-bottom:25px;}
-.testimonial-card p{font-family:'Cormorant Garamond',serif;font-size:28px;line-height:1.5;}
-@media(max-width:900px){
-  .faq-header h2,.testimonials-header h2{font-size:55px;}
-  .testimonial-grid{grid-template-columns:1fr;}
-}
-</style>
-
-<!-- ================= CONTACT SECTION ================= -->
 <section class="contact-section" id="contact">
   <div class="contact-box">
     <div class="contact-text">
@@ -778,7 +768,6 @@ h1{
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="footer-logo" id="footerLogo">Anna Kankanyan</div>
   <p id="footerText">Clinical Psychologist</p>
@@ -790,49 +779,6 @@ h1{
   <p class="copyright">© 2026 Anna Kankanyan. All rights reserved.</p>
 </footer>
 
-<style>
-.contact-section{padding:140px 9%;}
-.contact-box{background:#eee4d8;border-radius:50px;padding:90px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.contact-text h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;margin-bottom:30px;}
-.contact-text p{font-size:18px;line-height:2;color:#6d6056;}
-.contact-button{display:inline-block;margin-top:40px;background:#b99876;color:white;padding:18px 45px;border-radius:50px;text-decoration:none;transition:.4s;}
-.contact-button:hover{transform:translateY(-5px);}
-.contact-details{background:white;padding:50px;border-radius:35px;}
-.detail{padding:25px 0;border-bottom:1px solid #eadfd2;}
-.detail:last-child{border:none;}
-.detail h4{font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:10px;}
-.detail p{color:#6d6056;}
-.footer{background:#43362d;color:white;padding:60px 9%;text-align:center;}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:45px;margin-bottom:15px;}
-.footer p{opacity:.8;}
-.footer-links{margin:30px 0;display:flex;justify-content:center;gap:35px;}
-.footer-links a{color:white;text-decoration:none;font-size:14px;}
-.copyright{font-size:13px;}
-@media(max-width:900px){
-  .contact-box{grid-template-columns:1fr;padding:50px 30px;}
-  .contact-text h2{font-size:55px;}
-  .footer-links{flex-direction:column;}
-}
-</style>
-
-<!-- ================= FINAL POLISH & MOBILE MENU ================= -->
-<style>
-.about-section,.services-section,.education-section,.approach-section,.faq-section,.testimonials-section,.contact-section{
-  opacity:0;
-  transform:translateY(60px);
-  transition:1.2s ease;
-}
-.show-section{opacity:1;transform:translateY(0);}
-
-.mobile-menu-btn{display:none;font-size:30px;cursor:pointer;color:#43362d;}
-@media(max-width:900px){
-  .mobile-menu-btn{display:block;}
-  .mobile-menu{position:fixed;top:0;right:-100%;width:80%;height:100vh;background:#faf8f4;padding:100px 40px;transition:.5s;z-index:1000;}
-  .mobile-menu.active{right:0;}
-  .mobile-menu a{display:block;text-decoration:none;color:#43362d;font-size:22px;margin-bottom:30px;font-family:'Cormorant Garamond',serif;}
-}
-</style>
-
 <div class="mobile-menu" id="mobileMenu">
   <a href="#" id="mobileHome" onclick="openMobileMenu()">Home</a>
   <a href="#about" id="mobileAbout" onclick="openMobileMenu()">About</a>
@@ -842,9 +788,7 @@ h1{
   <a href="#contact" id="mobileContact" onclick="openMobileMenu()">Contact</a>
 </div>
 
-<!-- ================= ALL JAVASCRIPT ================= -->
 <script>
-
 window.addEventListener("scroll",()=>{
   if(window.scrollY>40){
     document.getElementById("navbar").classList.add("scrolled");
@@ -901,4 +845,161 @@ const aboutLanguages={
 const servicesLanguages={
   en:{small:"SERVICES",title:"Areas Where I Can Help",intro:"Professional psychological support focused on understanding yourself, building emotional balance and improving quality of life.",s1:"Individual Therapy",t1:"A confidential space where we work with emotions, thoughts, anxiety, stress and personal difficulties.",s2:"Psychosomatics",t2:"Exploring the connection between emotional experiences, stress and physical sensations.",s3:"Self Development",t3:"Working on self-esteem, personal boundaries, relationships and inner resources.",s4:"Emotional Support",t4:"Support during difficult life periods, transitions and emotional challenges."},
   ru:{small:"УСЛУГИ",title:"С чем я могу помочь",intro:"Профессиональная психологическая поддержка для понимания себя, восстановления эмоционального баланса и улучшения качества жизни.",s1:"Индивидуальная терапия",t1:"Безопасное пространство для работы с эмоциями, тревогой, стрессом и личными трудностями.",s2:"Психосоматика",t2:"Исследование связи между эмоциональным состоянием, стрессом и реакциями организма.",s3:"Личностное развитие",t3:"Работа с самооценкой, границами, отношениями и внутренними ресурсами.",s4:"Эмоциональная поддержка",t4:"Поддержка в сложные периоды жизни и во время важных изменений."},
-  am:{small:"ԾԱՌԱՅՈՒՅՈՒՆԵՐ",title:"Ոլորտներ, որտեղ ես կարող եմ քեզ օ
+  am:{small:"ԾԱՌԱՅՈՒՅՈՒՆԵՐ",title:"Ոլորտներ, որտեղ ես կարող եմ քեզ օգնել",intro:"Մասնագիտական հոգեբանական աջակցություն՝ ինքներդ ձեզ ավելի լավ հասկանալու, հավասարակշռություն գտնելու և կյանքի որակը բարելավելու համար։",s1:"Անհատական թերապիա",t1:"Անվտանգ տարածք՝ զգացմունքների, անհանգստության, սթրեսի և դժվարությունների հետ աշխատանքի համար։",s2:"Հոգեսոմատիկա",t2:"Զգացմունքների, սթրեսի և մարմնի արձագանքների միջև կապի ուսումնասիրություն։",s3:"Անձնական զարգացում",t3:"Աշխատանք ինքնագնահատականի, սահմանների, հարաբերությունների և ներքին եսուրսների վրա։",s4:"Էմոցիոնալ աջակցություն",t4:"Աջակցություն կյանքի դժվար փուլերում և փոփոխությունների ժամանակ։"}
+};
+
+const educationLanguages={
+  en:{small:"EDUCATION",title:"My Professional Journey",intro:"My academic path combines clinical psychology, psychoanalytic education and continuous professional development.",t1:"Bachelor's Degree — Russian-Armenian (Slavonic) University",d1:"My first professional step in psychology began at the Russian-Armenian (Slavonic) University, where I completed my Bachelor's degree after four years of study.",t2:"Clinical Psychology — Yerevan State University",d2:"To gain deeper professional specialization, I continued my education at Yerevan State University in the field of Clinical Psychology.",t3:"Psychoanalytic Education — Saint Petersburg",d3:"I continued my professional development at the East European Institute of Psychoanalysis, one of the leading psychoanalytic institutions in Saint Petersburg.",t4:"10 Years of Professional Experience",d4:"I have been working in the field of psychology for 10 years, continuously developing my knowledge and therapeutic skills."},
+  ru:{small:"ОБРАЗОВАНИЕ",title:"Мой профессиональный путь",intro:"Мой академический путь включает клиническую психологию, психоаналитическое образование и непрерывное профессиональное развитие.",t1:"Бакалавриат — Российско-Армянский (Славянский) университет",d1:"Мой первый профессиональный шаг в психологии начался в Российско-Армянском (Славянском) университете, где я получила степень бакалавра после четырех лет обучения.",t2:"Клиническая психология — Ереванский государственный университет",d2:"Для получения более глубокой специализации я продолжила обучение в Ереванском государственном университете по направлению клинической психологии.",t3:"Психоаналитическое образование — Санкт-Петербург",d3:"Я продолжила профессиональное развитие в Восточно-Европейском Институте Психоанализа — одном из ведущих психоаналитических институтов Санкт-Петербурга.",t4:"10 лет профессионального опыта",d4:"Я работаю в области психологии уже 10 лет, постоянно развивая свои знания и терапевтические навыки."},
+  am:{small:"ԿՐԹՈՒԹՈՒՆ",title:"մ մասնագիտական ուղին",intro:"Իմ ակադեմիական ուղին համադրում է կլինիկական հոգեբանությունը, հոգեվերլուծական կրթությունը և շարունակական մասնագիտական զարգացումը։",t1:"Բակալավրիատ — Ռուս-հայկական (սլավոնական) համալսարան",d1:"Իմ առաջին մասնագիտական քայլը հոգեբանության ոլորտում սկսվեց Ռուս-հայկական (սլավոնական) համալսարանում, որտեղ ես ստացա բակալավրի աստիճան՝ չորս տարվա ուսուցումից հետո։",t2:"Կլինիկական հոգեբանություն — Երևանի պետական համալսարան",d2:"Ավելի որը մասնագիտացում ստանալու համար ես շարունակեցի կրթությունս Երևանի պետական համալսարանում՝ կլինիկական հոգեբանության ոլորտում։",t3:"Հոգեվերլուծական կրթություն — Սանկտ Պետերբուրգ",d3:"Ես արունակեցի մասնագիտական զարգացումս Արևելաեվրոպական հոգեվերլուծության ինստիտուտում, որը Սանկտ Պետերբուրգի առաջատար հոգեվերլուծական հաստատություններից մեկն է։",t4:"10 տարվա մասնագիտական փորձ",d4:"Ես արդեն 10 տարի է, ինչ աշխատում եմ հոգեբանության ոլորտում անընդհատ արգացնելով իմ գիտելիքներն ու երապևտիկ հմտությունները։"}
+};
+
+const approachLanguages={
+  en:{small:"MY APPROACH",title:"How Therapy Works",intro:"A thoughtful and individual approach that helps you better understand yourself and create meaningful changes.",t1:"Understanding",d1:"We begin by exploring your experiences, emotions, thoughts and the situations that bring you to therapy.",t2:"Assessment",d2:"Together we identify patterns, difficulties and internal resources that can support your growth.",t3:"Therapeutic Process",d3:"Through professional psychological methods, we work toward emotional balance and positive change.",t4:"Growth",d4:"The goal is not only to overcome difficulties, but also to develop a deeper connection with yourself."},
+  ru:{small:"МОЙ ПОДХОД",title:"Как проходит терапия",intro:"Индивидуальный подход, который помогает лучше понять себя и создать устойчивые изменения.",t1:"Понимание",d1:"Мы исследуем ваш опыт, эмоции, мысли и ситуации, которые привели вас в терапию.",t2:"Оценка",d2:"Вместе мы выявляем внутренние ресурсы и повторяющиеся жизненные паттерны.",t3:"Терапевтический процесс",d3:"Используя профессиональные методы, мы работаем над эмоциональным балансом и изменениями.",t4:"Развитие",d4:"Цель терапии — не только преодолеть трудности, но и глубже понять себя."},
+  am:{small:"Ի ՄՈՏԵՑՈՒՄԸ",title:"Ինչպես է անցնում թերապիան",intro:"Անհատական մոտեցում, որն օգնում է ավելի լավ հասկանալ նքներդ ձեզ և ստեղծել կայուն փոփոխություններ։",t1:"Հասկանալ",d1:"Մենք ուսումնասիրում ենք ձեր փորձը, զգացմունքները, մտքերը և այն իրավիակները, որոնք բերել են ձեզ թերապիայի։",t2:"Գնահատում",d2:"Միասին բացահայտում ենք դժվարությունները, օրինաչափությունները և ներքին ռեսուրսները։",t3:"Թերապևտիկ գործընթաց",d3:"Մասնագիտական մեթոդների միջոցով աշխատում ենք հուզական հավասարակշռության և փոփոխությունների վրա։",t4:"Աճ",d4:"Նպատակը ոչ միայն դժվարությունները հաղթահարելն է, այլ նաև ինքներդ ձեզ ավելի խոր ճանաչելը։"}
+};
+
+const faqLanguages={
+  en:{title:"Frequently Asked Questions",q1:"How long is one therapy session?",a1:"A typical session lasts around 50 minutes. The exact format depends on your individual needs.",q2:"How often should I attend therapy?",a2:"The frequency is discussed individually and depends on your goals and current situation.",q3:"Is everything discussed confidential?",a3:"Yes. Confidentiality and a safe therapeutic environment are fundamental parts of psychological work.",q4:"Is online therapy available?",a4:"Online consultations are available depending on your location and personal preferences."},
+  ru:{title:"Часто задаваемые вопросы",q1:"Сколько длится одна сессия?",a1:"Обычно сессия длится около 50 минут. Формат зависит от ваших индивидуальных потребностей.",q2:"Как часто нужно посещать терапию?",a2:"Частота встреч определяется индивидуально в зависимости от целей и ситуации.",q3:"Сохраняется ли конфиденциальность?",a3:"Да. Конфиденциальность является основой психологической работы.",q4:"Доступна ли онлайн-терапия?",a4:"Онлайн-консультации доступны в зависимости от ваших предпочтений."},
+  am:{title:"Հաախ տրվող հարցեր",q1:"Որքա՞ն է տևում մեկ սեանսը։",a1:"Սովորաբար սեանսը տևում է մոտ 50 րոպե։",q2:"Որքա՞ն հաճախ պետք է այցելել թերապիայի։",a2:"Հաճախականությունը որոշվում է անհատապես։",q3:"Արդյո՞ք ամեն նչ գաղտնի է մնում։",a3:"Այո, գաղտնիությունը հոգեբանական աշխատանքի կարևոր հիմքն է։",q4:"Հնարավո՞ր է օնլայն թերապիա։",a4:"Այո, հասանելի են օնլայն խորհրդատվություններ։"}
+};
+
+const contactLanguages={
+  en:{small:"CONTACT",title:"Let's Begin Your Journey",intro:"If you feel ready to take the first step, I would be happy to support you on your path.",button:"Book A Consultation",location:"Location",email:"Email",social:"Social Media"},
+  ru:{small:"КОНТАКТЫ",title:"Начнем этот путь вместе",intro:"Если вы готовы сделать первый шаг, я буду рада поддержать вас на этом пути.",button:"Записаться на консультацию",location:"Местоположение",email:"Электронная почта",social:"Социальные сети"},
+  am:{small:"ԿԱՊ",title:"Սկսենք այս ճանապարհը միասին",intro:"Եթե պատրաստ եք անել առաջին քայլը, ես ուրախ կլինեմ աջակցել ձեզ այս ճանապարհին։",button:"Գրանցվել խորհրդատվության",location:"Վայր",email:"Էլ․ հասցե",social:"Սոցիալական ցանցեր"}
+};
+
+function changeAbout(lang){
+  document.getElementById("aboutSmall").innerHTML=aboutLanguages[lang].small;
+  document.getElementById("aboutTitle").innerHTML=aboutLanguages[lang].title;
+  document.getElementById("aboutDescription").innerHTML=aboutLanguages[lang].description;
+  document.getElementById("info1").innerHTML=aboutLanguages[lang].i1;
+  document.getElementById("info2").innerHTML=aboutLanguages[lang].i2;
+  document.getElementById("info3").innerHTML=aboutLanguages[lang].i3;
+}
+
+function changeServices(lang){
+  document.getElementById("servicesSmall").innerHTML=servicesLanguages[lang].small;
+  document.getElementById("servicesTitle").innerHTML=servicesLanguages[lang].title;
+  document.getElementById("servicesIntro").innerHTML=servicesLanguages[lang].intro;
+  document.getElementById("service1Title").innerHTML=servicesLanguages[lang].s1;
+  document.getElementById("service1Text").innerHTML=servicesLanguages[lang].t1;
+  document.getElementById("service2Title").innerHTML=servicesLanguages[lang].s2;
+  document.getElementById("service2Text").innerHTML=servicesLanguages[lang].t2;
+  document.getElementById("service3Title").innerHTML=servicesLanguages[lang].s3;
+  document.getElementById("service3Text").innerHTML=servicesLanguages[lang].t3;
+  document.getElementById("service4Title").innerHTML=servicesLanguages[lang].s4;
+  document.getElementById("service4Text").innerHTML=servicesLanguages[lang].t4;
+}
+
+function changeEducation(lang){
+  document.getElementById("educationSmall").innerHTML=educationLanguages[lang].small;
+  document.getElementById("educationTitle").innerHTML=educationLanguages[lang].title;
+  document.getElementById("educationIntro").innerHTML=educationLanguages[lang].intro;
+  document.getElementById("edu1Title").innerHTML=educationLanguages[lang].t1;
+  document.getElementById("edu1Text").innerHTML=educationLanguages[lang].d1;
+  document.getElementById("edu2Title").innerHTML=educationLanguages[lang].t2;
+  document.getElementById("edu2Text").innerHTML=educationLanguages[lang].d2;
+  document.getElementById("edu3Title").innerHTML=educationLanguages[lang].t3;
+  document.getElementById("edu3Text").innerHTML=educationLanguages[lang].d3;
+  document.getElementById("edu4Title").innerHTML=educationLanguages[lang].t4;
+  document.getElementById("edu4Text").innerHTML=educationLanguages[lang].d4;
+}
+
+function changeApproach(lang){
+  document.getElementById("approachSmall").innerHTML=approachLanguages[lang].small;
+  document.getElementById("approachTitle").innerHTML=approachLanguages[lang].title;
+  document.getElementById("approachIntro").innerHTML=approachLanguages[lang].intro;
+  document.getElementById("step1Title").innerHTML=approachLanguages[lang].t1;
+  document.getElementById("step1Text").innerHTML=approachLanguages[lang].d1;
+  document.getElementById("step2Title").innerHTML=approachLanguages[lang].t2;
+  document.getElementById("step2Text").innerHTML=approachLanguages[lang].d2;
+  document.getElementById("step3Title").innerHTML=approachLanguages[lang].t3;
+  document.getElementById("step3Text").innerHTML=approachLanguages[lang].d3;
+  document.getElementById("step4Title").innerHTML=approachLanguages[lang].t4;
+  document.getElementById("step4Text").innerHTML=approachLanguages[lang].d4;
+}
+
+function changeFAQ(lang){
+  document.getElementById("faqTitle").innerHTML=faqLanguages[lang].title;
+  document.getElementById("faqQ1").innerHTML=faqLanguages[lang].q1;
+  document.getElementById("faqA1").innerHTML=faqLanguages[lang].a1;
+  document.getElementById("faqQ2").innerHTML=faqLanguages[lang].q2;
+  document.getElementById("faqA2").innerHTML=faqLanguages[lang].a2;
+  document.getElementById("faqQ3").innerHTML=faqLanguages[lang].q3;
+  document.getElementById("faqA3").innerHTML=faqLanguages[lang].a3;
+  document.getElementById("faqQ4").innerHTML=faqLanguages[lang].q4;
+  document.getElementById("faqA4").innerHTML=faqLanguages[lang].a4;
+}
+
+function changeContact(lang){
+  document.getElementById("contactSmall").innerHTML=contactLanguages[lang].small;
+  document.getElementById("contactTitle").innerHTML=contactLanguages[lang].title;
+  document.getElementById("contactIntro").innerHTML=contactLanguages[lang].intro;
+  document.getElementById("contactButton").innerHTML=contactLanguages[lang].button;
+  document.getElementById("locationTitle").innerHTML=contactLanguages[lang].location;
+  document.getElementById("emailTitle").innerHTML=contactLanguages[lang].email;
+  document.getElementById("socialTitle").innerHTML=contactLanguages[lang].social;
+}
+
+function changeLang(lang){
+  document.getElementById("siteLogo").innerHTML=language[lang].logo;
+  document.getElementById("footerLogo").innerHTML=language[lang].logo;
+  document.getElementById("menuHome").innerHTML=language[lang].menuHome;
+  document.getElementById("menuAbout").innerHTML=language[lang].menuAbout;
+  document.getElementById("menuServices").innerHTML=language[lang].menuServices;
+  document.getElementById("menuEducation").innerHTML=language[lang].menuEducation;
+  document.getElementById("menuFaq").innerHTML=language[lang].menuFaq;
+  document.getElementById("menuContact").innerHTML=language[lang].menuContact;
+  document.getElementById("smallTitle").innerHTML=language[lang].small;
+  document.getElementById("heroTitle").innerHTML=language[lang].title;
+  document.getElementById("heroText").innerHTML=language[lang].text;
+  document.getElementById("quote").innerHTML=language[lang].quote;
+  document.getElementById("btn1").innerHTML=language[lang].book;
+  document.getElementById("btn2").innerHTML=language[lang].about;
+  document.getElementById("mobileHome").innerHTML=language[lang].mHome;
+  document.getElementById("mobileAbout").innerHTML=language[lang].mAbout;
+  document.getElementById("mobileServices").innerHTML=language[lang].mServices;
+  document.getElementById("mobileEducation").innerHTML=language[lang].mEducation;
+  document.getElementById("mobileFaq").innerHTML=language[lang].mFaq;
+  document.getElementById("mobileContact").innerHTML=language[lang].mContact;
+  document.getElementById("footerInsta").innerHTML=language[lang].fInsta;
+  document.getElementById("footerContact").innerHTML=language[lang].fContact;
+  document.getElementById("footerPrivacy").innerHTML=language[lang].fPrivacy;
+  changeAbout(lang);
+  changeServices(lang);
+  changeEducation(lang);
+  changeApproach(lang);
+  changeFAQ(lang);
+  changeContact(lang);
+}
+
+function openFaq(button){
+  let item=button.parentElement;
+  item.classList.toggle("active");
+}
+
+function openMobileMenu(){
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
+
+const sections=document.querySelectorAll(".about-section, .services-section, .education-section, .approach-section, .faq-section, .testimonials-section, .contact-section");
+
+const observer=new IntersectionObserver(
+  entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("show-section");
+      }
+    });
+  },
+  { threshold: 0.05 }
+);
+
+sections.forEach(section=>{
+  observer.observe(section);
+});
+</script>
