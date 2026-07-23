@@ -365,38 +365,84 @@ h1{
   .timeline-content h3{font-size:26px;}
 }
 
-/* NEW: Media & Insights Section */
+/* UPDATED: Media & Insights Section with Enhanced Design */
 .media-section {
   padding: 50px 9% 150px;
-  background: #faf8f4;
+  background: linear-gradient(180deg, #faf8f4 0%, #f7f2eb 100%);
+  position: relative;
+}
+.media-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(185,152,118,0.1) 0%, transparent 70%);
+  border-radius: 50%;
 }
 .media-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto 80px;
+  position: relative;
+  z-index: 1;
+}
+.media-header .section-small {
+  display: inline-block;
+  padding: 8px 25px;
+  background: rgba(185,152,118,0.1);
+  border-radius: 50px;
+  margin-bottom: 25px;
 }
 .media-header h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 65px;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  color: #43362d;
+}
+.media-header p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #6d6056;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .media-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 50px;
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .media-card {
   background: white;
-  border-radius: 25px;
+  border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  position: relative;
+}
+.media-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #b99876, #d4b89a);
+  transform: scaleX(0);
   transition: transform 0.4s ease;
 }
 .media-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.12);
+}
+.media-card:hover::before {
+  transform: scaleX(1);
 }
 .media-card iframe {
   width: 100%;
@@ -404,15 +450,43 @@ h1{
   border: none;
 }
 .media-card h3 {
-  padding: 25px 30px;
+  padding: 30px 35px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
+  font-size: 28px;
   color: #43362d;
   margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.media-card .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(185,152,118,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.media-card .play-icon::after {
+  content: "▶";
+  color: white;
+  font-size: 30px;
+  margin-left: 5px;
+}
+.media-card:hover .play-icon {
+  opacity: 1;
 }
 @media(max-width: 900px) {
-  .media-grid { grid-template-columns: 1fr; }
+  .media-grid { grid-template-columns: 1fr; gap: 40px; }
   .media-header h2 { font-size: 45px; }
+  .media-card h3 { font-size: 24px; padding: 25px 30px; }
 }
 
 /* NEW: Visual Journey Section (Uses the edu photos) */
@@ -695,25 +769,28 @@ h1{
   </div>
 </section>
 
-<!-- NEW: Media & Insights Section (Holds the 2 YouTube Videos beautifully) -->
+<!-- UPDATED: Media & Insights Section with Enhanced Design -->
 <section class="media-section">
   <div class="media-header">
     <p class="section-small">MEDIA & INSIGHTS</p>
-    <h2>Featured Lectures</h2>
+    <h2>Educational Videos</h2>
+    <p>Explore psychological concepts through these informative lectures designed to help you understand yourself better.</p>
   </div>
   <div class="media-grid">
     <div class="media-card">
       <iframe src="https://www.youtube.com/embed/kqUFDCMXqpY" title="Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <h3>Introduction to Clinical Psychology</h3>
+      <div class="play-icon"></div>
+      <h3>Discipline or Motivation?</h3>
     </div>
     <div class="media-card">
       <iframe src="https://www.youtube.com/embed/JiLNdRg8lmY" title="Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <h3>Understanding Psychosomatics</h3>
+      <div class="play-icon"></div>
+      <h3>Self Esteem</h3>
     </div>
   </div>
 </section>
 
-<!-- NEW: Visual Journey Section (Uses the edu photos to fill empty space elegantly) -->
+<!-- NEW: Visual Journey Section (Uses the edu photos) -->
 <section class="journey-visual-section">
   <div class="journey-images">
     <div class="journey-shape"></div>
@@ -915,12 +992,12 @@ const language={
     logo:"Աննա Քանքանյան",
     small:"Կլինիկական հոգեբանություն",
     title:"Ճանապարհ դեպի<br>ինքդ քեզ",
-    text:"երապիան անվտանգ տարածք է՝ ինքներդ ձեզ հասկանալու, ներքին հավասարակշռություն գտնելու և ավելի խաղաղ կյանք կառուցելու համար։",
+    text:"երապիան անվտանգ տարածք է ինքներդ ձեզ հասկանալու, ներքին հավասարակշռություն գտնելու և ավելի խաղաղ կյանք կառուցելու համար։",
     quote:"Իրական փոփոխությունը սկսվում է այն պահին, երբ քեզ իսկապես լսում են։",
     book:"Գրանցվել",
     about:"Իմ մասին",
-    menuHome:"Գլխավոր", menuAbout:"Իմ մասին", menuServices:"առայություններ", menuEducation:"Կրթություն", menuFaq:"Հարցեր", menuContact:"Կապ",
-    mHome:"Գլխավոր", mAbout:"Իմ մասին", mServices:"Ծառայություններ", mEducation:"Կրթություն", mFaq:"Հարցեր", mContact:"ապ",
+    menuHome:"Գլխավոր", menuAbout:"Իմ մասին", menuServices:"առայություններ", menuEducation:"րթություն", menuFaq:"Հարցեր", menuContact:"Կապ",
+    mHome:"Գլխավոր", mAbout:"Իմ մասին", mServices:"առայություններ", mEducation:"րթություն", mFaq:"Հարցեր", mContact:"Կապ",
     fInsta:"Instagram", fContact:"Կապ", fPrivacy:"աղտնիության քաղաքականություն"
   }
 };
@@ -928,37 +1005,37 @@ const language={
 const aboutLanguages={
   en:{small:"ABOUT ME",title:"A Safe Space<br>For Personal Growth",description:"I am Anna Kankanyan, Clinical Psychologist. My work is based on an individual approach, scientific psychological methods and a deep understanding of human emotions.",i1:"Clinical Psychology",i2:"Individual Therapy",i3:"Personal Development"},
   ru:{small:"ОБО МНЕ",title:"Безопасное пространство<br>для развития",description:"Я Анна Канканян, клинический психолог. В своей работе я использую индивидуальный подход, современные психологические методы и глубокое понимание эмоций человека.",i1:"Клиническая психология",i2:"Индивидуальная терапия",i3:"Личностное развитие"},
-  am:{small:"Ի ՄԱՍԻՆ",title:"Անվտանգ տարածք<br>անձնական աճի համար",description:"Ես Աննա Քանքանյանն եմ՝ կլինիկական հոգեբան։ Իմ աշխատանքում համադրում եմ անհատական մոտեցումը, ժամանակակից հոգեբանական մեթոդները և մարդու զգացմունքների խոր ըմբռնումը։",i1:"Կլինիկական հոգեբանություն",i2:"Անհատական թերապիա",i3:"Անձնական զարգացում"}
+  am:{small:" ՄԱՍԻՆ",title:"Անվտանգ տարածք<br>անձնական աճի համար",description:"Ես Աննա Քանքանյանն եմ՝ կլինիկական հոգեբան։ Իմ աշխատանքում համադրում եմ անհատական մոտեցումը, ժամանակակից հոգեբանական մեթոդները և մարդու զգացմունքների խոր ըմբռնումը։",i1:"Կլինիկական հոգեբանություն",i2:"Անհատական թերապիա",i3:"Աննական զարգացում"}
 };
 
 const servicesLanguages={
   en:{small:"SERVICES",title:"Areas Where I Can Help",intro:"Professional psychological support focused on understanding yourself, building emotional balance and improving quality of life.",s1:"Individual Therapy",t1:"A confidential space where we work with emotions, thoughts, anxiety, stress and personal difficulties.",s2:"Psychosomatics",t2:"Exploring the connection between emotional experiences, stress and physical sensations.",s3:"Self Development",t3:"Working on self-esteem, personal boundaries, relationships and inner resources.",s4:"Emotional Support",t4:"Support during difficult life periods, transitions and emotional challenges."},
   ru:{small:"УСЛУГИ",title:"С чем я могу помочь",intro:"Профессиональная психологическая поддержка для понимания себя, восстановления эмоционального баланса и улучшения качества жизни.",s1:"Индивидуальная терапия",t1:"Безопасное пространство для работы с эмоциями, тревогой, стрессом и личными трудностями.",s2:"Психосоматика",t2:"Исследование связи между эмоциональным состоянием, стрессом и реакциями организма.",s3:"Личностное развитие",t3:"Работа с самооценкой, границами, отношениями и внутренними ресурсами.",s4:"Эмоциональная поддержка",t4:"Поддержка в сложные периоды жизни и во время важных изменений."},
-  am:{small:"ԾԱՌԱՅՈՒՅՈՒՆԵՐ",title:"Ոլորտներ, որտեղ ես կարող եմ քեզ օգնել",intro:"Մասնագիտական հոգեբանական աջակցություն՝ ինքներդ ձեզ ավելի լավ հասկանալու, հավասարակշռություն գտնելու և կյանքի որակը բարելավելու համար։",s1:"Անհատական թերապիա",t1:"Անվտանգ տարածք՝ զգացմունքների, անհանգստության, սթրեսի և դժվարությունների հետ աշխատանքի համար։",s2:"Հոգեսոմատիկա",t2:"Զգացմունքների, սթրեսի և մարմնի արձագանքների միջև կապի ուսումնասիրություն։",s3:"Անձնական զարգացում",t3:"Աշխատանք ինքնագնահատականի, սահմանների, հարաբերությունների և ներքին եսուրսների վրա։",s4:"Էմոցիոնալ աջակցություն",t4:"Աջակցություն կյանքի դժվար փուլերում և փոփոխությունների ժամանակ։"}
+  am:{small:"ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ",title:"լորտներ, որտեղ ես կարող եմ քեզ օգնել",intro:"ասնագիտական հոգեբանական աջակցություն՝ նքներդ ձեզ ավելի լավ հասկանալու, հավասարակշռություն գտնելու և կյանքի որակը բարելավելու համար։",s1:"Անհատական թերապիա",t1:"Անվտանգ տարածք՝ գացմունքների, անհանգստության, սթրեսի և դժվարությունների հետ աշխատանքի համար։",s2:"Հոգեսոմատիկա",t2:"Զգացմունքների, սթրեսի և մարմնի արձագանքների միջև կապի ուսումնասիրություն։",s3:"Անձնական զարգացում",t3:"Աշխատանք ինքնագնահատականի, սահմանների, հարաբերությունների և ներքին ռեսուրսների վրա։",s4:"Էմոցիոնալ աջակցություն",t4:"Աջակցություն կյանքի դժվար փուլերում և փոփոխությունների ժամանակ։"}
 };
 
 const educationLanguages={
   en:{small:"EDUCATION",title:"My Professional Journey",intro:"My academic path combines clinical psychology, psychoanalytic education and continuous professional development.",t1:"Bachelor's Degree — Russian-Armenian (Slavonic) University",d1:"My first professional step in psychology began at the Russian-Armenian (Slavonic) University, where I completed my Bachelor's degree after four years of study.",t2:"Clinical Psychology — Yerevan State University",d2:"To gain deeper professional specialization, I continued my education at Yerevan State University in the field of Clinical Psychology.",t3:"Psychoanalytic Education — Saint Petersburg",d3:"I continued my professional development at the East European Institute of Psychoanalysis, one of the leading psychoanalytic institutions in Saint Petersburg.",t4:"10 Years of Professional Experience",d4:"I have been working in the field of psychology for 10 years, continuously developing my knowledge and therapeutic skills."},
   ru:{small:"ОБРАЗОВАНИЕ",title:"Мой профессиональный путь",intro:"Мой академический путь включает клиническую психологию, психоаналитическое образование и непрерывное профессиональное развитие.",t1:"Бакалавриат — Российско-Армянский (Славянский) университет",d1:"Мой первый профессиональный шаг в психологии начался в Российско-Армянском (Славянском) университете, где я получила степень бакалавра после четырех лет обучения.",t2:"Клиническая психология — Ереванский государственный университет",d2:"Для получения более глубокой специализации я продолжила обучение в Ереванском государственном университете по направлению клинической психологии.",t3:"Психоаналитическое образование — Санкт-Петербург",d3:"Я продолжила профессиональное развитие в Восточно-Европейском Институте Психоанализа — одном из ведущих психоаналитических институтов Санкт-Петербурга.",t4:"10 лет профессионального опыта",d4:"Я работаю в области психологии уже 10 лет, постоянно развивая свои знания и терапевтические навыки."},
-  am:{small:"ԿՐԹՈՒԹՈՒՆ",title:"մ մասնագիտական ուղին",intro:"Իմ ակադեմիական ուղին համադրում է կլինիկական հոգեբանությունը, հոգեվերլուծական կրթությունը և շարունակական մասնագիտական զարգացումը։",t1:"Բակալավրիատ — Ռուս-հայկական (սլավոնական) համալսարան",d1:"Իմ առաջին մասնագիտական քայլը հոգեբանության ոլորտում սկսվեց Ռուս-հայկական (սլավոնական) համալսարանում, որտեղ ես ստացա բակալավրի աստիճան՝ չորս տարվա ուսուցումից հետո։",t2:"Կլինիկական հոգեբանություն — Երևանի պետական համալսարան",d2:"Ավելի որը մասնագիտացում ստանալու համար ես շարունակեցի կրթությունս Երևանի պետական համալսարանում՝ կլինիկական հոգեբանության ոլորտում։",t3:"Հոգեվերլուծական կրթություն — Սանկտ Պետերբուրգ",d3:"Ես արունակեցի մասնագիտական զարգացումս Արևելաեվրոպական հոգեվերլուծության ինստիտուտում, որը Սանկտ Պետերբուրգի առաջատար հոգեվերլուծական հաստատություններից մեկն է։",t4:"10 տարվա մասնագիտական փորձ",d4:"Ես արդեն 10 տարի է, ինչ աշխատում եմ հոգեբանության ոլորտում անընդհատ արգացնելով իմ գիտելիքներն ու երապևտիկ հմտությունները։"}
+  am:{small:"ԿԹՈՒԹՅՈՒՆ",title:"մ մասնագիտական ուղին",intro:"Իմ ակադեմիական ուղին համադրում է կլինիկական հոգեբանությունը, հոգեվերլուծական կրթությունը և շարունակական մասնագիտական զարգացումը։",t1:"Բակալավրիատ — Ռուս-հայկական (սլավոնական) համալսարան",d1:"Իմ առաջին մասնագիտական քայլը հոգեբանության ոլորտում սկսվեց ուս-հայկական (սլավոնական) համալսարանում, որտեղ ես ստացա բակալավրի աստիճան՝ չորս տարվա ուսուցումից հետո։",t2:"Կլինիկական հոգեբանություն — Երևանի պետական համալսարան",d2:"Ավելի խորը մասնագիտացում ստանալու համար ես շարունակեցի կրթությունս Երևանի պետական համալսարանում կլինիկական հոգեբանության ոլորտում։",t3:"Հոգեվերլուծական կրթություն — Սանկտ Պետերբուրգ",d3:"Ես շարունակեցի մասնագիտական զարգացումս Արևելաեվրոպական հոգեվերլուծության ինստիտուտում, որը Սանկտ Պետերբուրգի առաջատար հոգեվերլուծական հաստատություններից մեկն է։",t4:"10 տարվա մասնագիտական փորձ",d4:"Ես արդեն 10 տարի է, ինչ աշխատում եմ հոգեբանության ոլորտում անընդհատ արգացնելով իմ գիտելիքներն ու երապևտիկ հմտությունները։"}
 };
 
 const approachLanguages={
   en:{small:"MY APPROACH",title:"How Therapy Works",intro:"A thoughtful and individual approach that helps you better understand yourself and create meaningful changes.",t1:"Understanding",d1:"We begin by exploring your experiences, emotions, thoughts and the situations that bring you to therapy.",t2:"Assessment",d2:"Together we identify patterns, difficulties and internal resources that can support your growth.",t3:"Therapeutic Process",d3:"Through professional psychological methods, we work toward emotional balance and positive change.",t4:"Growth",d4:"The goal is not only to overcome difficulties, but also to develop a deeper connection with yourself."},
   ru:{small:"МОЙ ПОДХОД",title:"Как проходит терапия",intro:"Индивидуальный подход, который помогает лучше понять себя и создать устойчивые изменения.",t1:"Понимание",d1:"Мы исследуем ваш опыт, эмоции, мысли и ситуации, которые привели вас в терапию.",t2:"Оценка",d2:"Вместе мы выявляем внутренние ресурсы и повторяющиеся жизненные паттерны.",t3:"Терапевтический процесс",d3:"Используя профессиональные методы, мы работаем над эмоциональным балансом и изменениями.",t4:"Развитие",d4:"Цель терапии — не только преодолеть трудности, но и глубже понять себя."},
-  am:{small:"Ի ՄՈՏԵՑՈՒՄԸ",title:"Ինչպես է անցնում թերապիան",intro:"Անհատական մոտեցում, որն օգնում է ավելի լավ հասկանալ նքներդ ձեզ և ստեղծել կայուն փոփոխություններ։",t1:"Հասկանալ",d1:"Մենք ուսումնասիրում ենք ձեր փորձը, զգացմունքները, մտքերը և այն իրավիակները, որոնք բերել են ձեզ թերապիայի։",t2:"Գնահատում",d2:"Միասին բացահայտում ենք դժվարությունները, օրինաչափությունները և ներքին ռեսուրսները։",t3:"Թերապևտիկ գործընթաց",d3:"Մասնագիտական մեթոդների միջոցով աշխատում ենք հուզական հավասարակշռության և փոփոխությունների վրա։",t4:"Աճ",d4:"Նպատակը ոչ միայն դժվարությունները հաղթահարելն է, այլ նաև ինքներդ ձեզ ավելի խոր ճանաչելը։"}
+  am:{small:"ԻՄ ՄՈՏԵՑՈՒՄԸ",title:"Ինչպես է անցնում թերապիան",intro:"Անհատական մոտեցում, որն գնում է ավելի ավ հասկանալ ինքներդ ձեզ և ստեղծել կայուն փոփոխություններ։",t1:"Հասկանալ",d1:"ենք ուսումնասիրում ենք ձեր փորձը, զգացմունքները, մտքերը և այն իրավիճակները, որոնք բերել են ձեզ թերապիայի։",t2:"Գնահատում",d2:"Միասին բացահայտում ենք դժվարությունները, օրինաչափությունները և ներքին ռեսուրսները։",t3:"երապևտիկ գործընթաց",d3:"Մասնագիտական մեթոդների միջոցով աշխատում ենք հուզական հավասարակշռության և փոփոխությունների վրա։",t4:"Աճ",d4:"Նպատակը ոչ միայն դժվարությունները հաղթահարելն է, այլ նաև ինքներդ ձեզ ավելի խոր ճանաչելը։"}
 };
 
 const faqLanguages={
   en:{title:"Frequently Asked Questions",q1:"How long is one therapy session?",a1:"A typical session lasts around 50 minutes. The exact format depends on your individual needs.",q2:"How often should I attend therapy?",a2:"The frequency is discussed individually and depends on your goals and current situation.",q3:"Is everything discussed confidential?",a3:"Yes. Confidentiality and a safe therapeutic environment are fundamental parts of psychological work.",q4:"Is online therapy available?",a4:"Online consultations are available depending on your location and personal preferences."},
   ru:{title:"Часто задаваемые вопросы",q1:"Сколько длится одна сессия?",a1:"Обычно сессия длится около 50 минут. Формат зависит от ваших индивидуальных потребностей.",q2:"Как часто нужно посещать терапию?",a2:"Частота встреч определяется индивидуально в зависимости от целей и ситуации.",q3:"Сохраняется ли конфиденциальность?",a3:"Да. Конфиденциальность является основой психологической работы.",q4:"Доступна ли онлайн-терапия?",a4:"Онлайн-консультации доступны в зависимости от ваших предпочтений."},
-  am:{title:"Հաախ տրվող հարցեր",q1:"Որքա՞ն է տևում մեկ սեանսը։",a1:"Սովորաբար սեանսը տևում է մոտ 50 րոպե։",q2:"Որքա՞ն հաճախ պետք է այցելել թերապիայի։",a2:"Հաճախականությունը որոշվում է անհատապես։",q3:"Արդյո՞ք ամեն նչ գաղտնի է մնում։",a3:"Այո, գաղտնիությունը հոգեբանական աշխատանքի կարևոր հիմքն է։",q4:"Հնարավո՞ր է օնլայն թերապիա։",a4:"Այո, հասանելի են օնլայն խորհրդատվություններ։"}
+  am:{title:"Հաճախ տրվող հարցեր",q1:"Որքա՞ն է տևում մեկ սեանսը։",a1:"Սովորաբար սեանսը տևում է մոտ 50 րոպե։",q2:"Որքա՞ն հաճախ պետք է այցելել թերապիայի։",a2:"Հաճախականությունը որոշվում է անհատապես։",q3:"Արդյո՞ք ամեն ինչ գաղտնի է մնում։",a3:"Այո, գաղտնիությունը հոգեբանական աշխատանքի կարևոր հիմքն է։",q4:"Հնարավո՞ր է օնլայն թերապիա։",a4:"Այո, հասանելի են օնլայն խորհրդատվություններ։"}
 };
 
 const contactLanguages={
   en:{small:"CONTACT",title:"Let's Begin Your Journey",intro:"If you feel ready to take the first step, I would be happy to support you on your path.",button:"Book A Consultation",location:"Location",email:"Email",social:"Social Media"},
   ru:{small:"КОНТАКТЫ",title:"Начнем этот путь вместе",intro:"Если вы готовы сделать первый шаг, я буду рада поддержать вас на этом пути.",button:"Записаться на консультацию",location:"Местоположение",email:"Электронная почта",social:"Социальные сети"},
-  am:{small:"ԿԱՊ",title:"Սկսենք այս ճանապարհը միասին",intro:"Եթե պատրաստ եք անել առաջին քայլը, ես ուրախ կլինեմ աջակցել ձեզ այս ճանապարհին։",button:"Գրանցվել խորհրդատվության",location:"Վայր",email:"Էլ․ հասցե",social:"Սոցիալական ցանցեր"}
+  am:{small:"ԿԱՊ",title:"Սկսենք այս անապարհը միասին",intro:"Եթե պատրաստ եք անել առաջին քայլը, ես ուրախ կլինեմ աջակցել եզ այս ճանապարհին։",button:"Գրանցվել խորհրդատվության",location:"Վայր",email:"Էլ․ հասցե",social:"Սոցիալական ցանցեր"}
 };
 
 function changeAbout(lang){
