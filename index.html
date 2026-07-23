@@ -292,27 +292,27 @@ h1{
   .services-header h2{font-size:55px;}
 }
 
-.education-section{padding:150px 9%;background:#faf8f4;}
+.education-section{padding:150px 9% 50px;background:#faf8f4;}
 .education-header{text-align:center;max-width:800px;margin:auto;}
 .education-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;margin-bottom:30px;}
 .education-header p:last-child{font-size:18px;line-height:2;color:#6d6056;}
-.timeline{max-width:1200px;margin:100px auto 0;position:relative;}
+.timeline{max-width:1000px;margin:80px auto 0;position:relative;}
 .timeline::before{content:"";position:absolute;left:50%;top:0;height:100%;width:1px;background:#d8c5af;}
 
 .timeline-item{
   display:grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap:70px;
-  margin-bottom:90px;
+  grid-template-columns: 1fr 1.5fr;
+  gap:60px;
+  margin-bottom:70px;
   position:relative;
-  align-items:center;
+  align-items:start;
 }
 
 .timeline-left{
   display:flex;
   flex-direction:column;
   align-items:flex-end;
-  gap:20px;
+  padding-top:10px;
 }
 
 .timeline-year{
@@ -320,66 +320,30 @@ h1{
   font-size:80px;
   color:#c4a586;
   text-align:right;
-}
-
-.timeline-image-wrapper{
-  width:100%;
-  max-width:350px;
-  height:220px;
-  overflow:hidden;
-  border-radius:15px;
-  box-shadow:0 15px 40px rgba(0,0,0,.08);
-}
-
-.timeline-image{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform 0.5s ease;
-}
-
-.timeline-image-wrapper:hover .timeline-image{
-  transform:scale(1.05);
-}
-
-.timeline-video-wrapper{
-  width:100%;
-  max-width:350px;
-  position:relative;
-  padding-bottom:56.25%; 
-  height:0;
-  overflow:hidden;
-  border-radius:15px;
-  box-shadow:0 15px 40px rgba(0,0,0,.08);
-  background:#000;
-}
-
-.timeline-video-wrapper iframe{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  border-radius:15px;
+  line-height:1;
 }
 
 .timeline-content{
   background:white;
-  padding:50px;
-  border-radius:30px;
-  box-shadow:0 20px 50px rgba(0,0,0,.05);
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,.04);
+  transition: transform 0.3s ease;
+}
+.timeline-content:hover {
+  transform: translateY(-5px);
 }
 
 .timeline-content h3{
   font-family:'Cormorant Garamond',serif;
-  font-size:36px;
-  margin-bottom:20px;
+  font-size:32px;
+  margin-bottom:15px;
   line-height:1.3;
 }
 
 .timeline-content p{
   font-size:16px;
-  line-height:1.9;
+  line-height:1.8;
   color:#6d6056;
 }
 
@@ -388,7 +352,7 @@ h1{
   .timeline::before{left:20px;}
   .timeline-item{
     grid-template-columns:1fr;
-    gap:30px;
+    gap:20px;
     padding-left:50px;
   }
   .timeline-left{
@@ -398,17 +362,133 @@ h1{
     text-align:left;
     font-size:60px;
   }
-  .timeline-image-wrapper, .timeline-video-wrapper{
-    max-width:100%;
-  }
-  .timeline-content h3{font-size:28px;}
+  .timeline-content h3{font-size:26px;}
 }
 
-.approach-section{padding:150px 9%;background:#f7f2eb;}
+/* NEW: Media & Insights Section */
+.media-section {
+  padding: 50px 9% 150px;
+  background: #faf8f4;
+}
+.media-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+.media-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 65px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.media-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  transition: transform 0.4s ease;
+}
+.media-card:hover {
+  transform: translateY(-8px);
+}
+.media-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+.media-card h3 {
+  padding: 25px 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  color: #43362d;
+  margin: 0;
+}
+@media(max-width: 900px) {
+  .media-grid { grid-template-columns: 1fr; }
+  .media-header h2 { font-size: 45px; }
+}
+
+/* NEW: Visual Journey Section (Uses the edu photos) */
+.journey-visual-section {
+  padding: 100px 9%;
+  background: #f7f2eb;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.journey-images {
+  position: relative;
+  height: 550px;
+  width: 100%;
+}
+.journey-img-1 {
+  position: absolute;
+  width: 340px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 20px;
+  top: 0;
+  left: 10%;
+  z-index: 2;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+.journey-img-2 {
+  position: absolute;
+  width: 300px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  bottom: 0;
+  right: 10%;
+  z-index: 3;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  border: 6px solid #f7f2eb;
+}
+.journey-shape {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: #eadfd2;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.journey-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 65px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+.journey-content p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #6d6056;
+  margin-bottom: 20px;
+}
+@media(max-width: 900px) {
+  .journey-visual-section { grid-template-columns: 1fr; }
+  .journey-images { height: 400px; margin-bottom: 40px; }
+  .journey-img-1 { width: 55%; height: 320px; left: 5%; }
+  .journey-img-2 { width: 50%; height: 300px; right: 5%; }
+  .journey-shape { width: 300px; height: 300px; }
+  .journey-content h2 { font-size: 45px; }
+}
+
+.approach-section{padding:150px 9%;background:#faf8f4;}
 .approach-header{text-align:center;max-width:850px;margin:auto;}
 .approach-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;margin-bottom:30px;}
 .approach-header p:last-child{font-size:18px;line-height:2;color:#6d6056;}
-.approach-container{max-width:900px;margin:100px auto 0;}
+.approach-container{max-width:900px;margin:80px auto 0;}
 .approach-step{display:grid;grid-template-columns:130px 1fr;gap:50px;align-items:center;background:white;padding:45px;margin-bottom:30px;border-radius:35px;transition:.4s;}
 .approach-step:hover{transform:translateX(10px);box-shadow:0 25px 60px rgba(0,0,0,.08);}
 .step-number{font-family:'Cormorant Garamond',serif;font-size:75px;color:#c4a586;}
@@ -420,7 +500,7 @@ h1{
   .step-number{font-size:60px;}
 }
 
-.faq-section{padding:150px 9%;background:#faf8f4;}
+.faq-section{padding:150px 9%;background:#f7f2eb;}
 .faq-header{text-align:center;}
 .faq-header h2,.testimonials-header h2{font-family:'Cormorant Garamond',serif;font-size:75px;line-height:1.1;}
 .faq-container{max-width:900px;margin:80px auto;}
@@ -430,7 +510,7 @@ h1{
 .faq-answer{max-height:0;overflow:hidden;transition:.5s;}
 .faq-answer p{padding:0 35px 35px;line-height:1.8;color:#6d6056;}
 .faq-item.active .faq-answer{max-height:200px;}
-.testimonials-section{padding:130px 9%;background:#f7f2eb;}
+.testimonials-section{padding:130px 9%;background:#faf8f4;}
 .testimonials-header{text-align:center;}
 .testimonial-grid{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
 .testimonial-card{background:white;padding:45px;border-radius:35px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.05);}
@@ -464,7 +544,7 @@ h1{
   .footer-links{flex-direction:column;}
 }
 
-.about-section,.services-section,.education-section,.approach-section,.faq-section,.testimonials-section,.contact-section{
+.about-section,.services-section,.education-section,.media-section,.journey-visual-section,.approach-section,.faq-section,.testimonials-section,.contact-section{
   opacity:0;
   transform:translateY(60px);
   transition:1.2s ease;
@@ -579,12 +659,6 @@ h1{
     <div class="timeline-item">
       <div class="timeline-left">
         <div class="timeline-year">01</div>
-        <div class="timeline-image-wrapper">
-          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna.jpg?v=1784572329" alt="Russian-Armenian University" class="timeline-image">
-        </div>
-        <div class="timeline-video-wrapper">
-          <iframe src="https://www.youtube.com/embed/kqUFDCMXqpY" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
       </div>
       <div class="timeline-content">
         <h3 id="edu1Title">Bachelor's Degree — Russian-Armenian (Slavonic) University</h3>
@@ -594,12 +668,6 @@ h1{
     <div class="timeline-item">
       <div class="timeline-left">
         <div class="timeline-year">02</div>
-        <div class="timeline-image-wrapper">
-          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/edu2.jpg?v=1784831461" alt="Yerevan State University" class="timeline-image">
-        </div>
-        <div class="timeline-video-wrapper">
-          <iframe src="https://www.youtube.com/embed/JiLNdRg8lmY" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
       </div>
       <div class="timeline-content">
         <h3 id="edu2Title">Clinical Psychology — Yerevan State University</h3>
@@ -609,12 +677,6 @@ h1{
     <div class="timeline-item">
       <div class="timeline-left">
         <div class="timeline-year">03</div>
-        <div class="timeline-image-wrapper">
-          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/edu3.jpg?v=1784831434" alt="Saint Petersburg Institute" class="timeline-image">
-        </div>
-        <div class="timeline-video-wrapper">
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
       </div>
       <div class="timeline-content">
         <h3 id="edu3Title">Psychoanalytic Education — Saint Petersburg</h3>
@@ -624,18 +686,45 @@ h1{
     <div class="timeline-item">
       <div class="timeline-left">
         <div class="timeline-year">04</div>
-        <div class="timeline-image-wrapper">
-          <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/anna_100a38e3-062b-4a5e-9a59-c28303c12fe1.jpg?v=1784831465" alt="Professional Experience" class="timeline-image">
-        </div>
-        <div class="timeline-video-wrapper">
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" title="Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
       </div>
       <div class="timeline-content">
         <h3 id="edu4Title">10 Years of Professional Experience</h3>
         <p id="edu4Text">I have been working in the field of psychology for 10 years, continuously developing my knowledge and therapeutic skills.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- NEW: Media & Insights Section (Holds the 2 YouTube Videos beautifully) -->
+<section class="media-section">
+  <div class="media-header">
+    <p class="section-small">MEDIA & INSIGHTS</p>
+    <h2>Featured Lectures</h2>
+  </div>
+  <div class="media-grid">
+    <div class="media-card">
+      <iframe src="https://www.youtube.com/embed/kqUFDCMXqpY" title="Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h3>Introduction to Clinical Psychology</h3>
+    </div>
+    <div class="media-card">
+      <iframe src="https://www.youtube.com/embed/JiLNdRg8lmY" title="Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h3>Understanding Psychosomatics</h3>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: Visual Journey Section (Uses the edu photos to fill empty space elegantly) -->
+<section class="journey-visual-section">
+  <div class="journey-images">
+    <div class="journey-shape"></div>
+    <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/edu2.jpg?v=1784831461" alt="Professional Development" class="journey-img-1">
+    <img src="https://cdn.shopify.com/s/files/1/0668/4495/0591/files/edu3.jpg?v=1784831434" alt="Therapy Space" class="journey-img-2">
+  </div>
+  <div class="journey-content">
+    <p class="section-small">DEDICATION & GROWTH</p>
+    <h2>A Space for Healing<br>& Continuous Learning</h2>
+    <p>My practice is built on a foundation of continuous learning, supervision, and a deep respect for the therapeutic process. </p>
+    <p>These moments capture the ongoing journey of professional development and the commitment to providing the highest standard of care in a warm, safe, and confidential environment.</p>
   </div>
 </section>
 
@@ -986,7 +1075,7 @@ function openMobileMenu(){
   document.getElementById("mobileMenu").classList.toggle("active");
 }
 
-const sections=document.querySelectorAll(".about-section, .services-section, .education-section, .approach-section, .faq-section, .testimonials-section, .contact-section");
+const sections=document.querySelectorAll(".about-section, .services-section, .education-section, .media-section, .journey-visual-section, .approach-section, .faq-section, .testimonials-section, .contact-section");
 
 const observer=new IntersectionObserver(
   entries=>{
